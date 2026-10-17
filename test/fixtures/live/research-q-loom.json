@@ -1,0 +1,963 @@
+{
+  "schema": "hey.agent-intelligence-response",
+  "schemaVersion": "1",
+  "capability": "research_project",
+  "status": "ok",
+  "query": {
+    "chainId": 4663,
+    "q": "loom"
+  },
+  "chain": {
+    "chainId": 4663,
+    "name": "Robinhood Chain"
+  },
+  "subject": {
+    "kind": "project",
+    "project": {
+      "slug": "loom",
+      "name": {
+        "text": "Loom",
+        "contentOrigin": "external_source",
+        "source": "project_record"
+      },
+      "url": "https://heyresearch.xyz/project/loom",
+      "token": {
+        "chainId": 4663,
+        "address": "0xdd0c034dada72325bc893fa39bc392e82bf847d7"
+      }
+    },
+    "resolvedFrom": {
+      "q": "loom"
+    }
+  },
+  "answer": {
+    "text": "Loom is shipping consistently: 61 meaningful events in 30 days; latest ship 2 days ago. loom: activity status SHIPPING, last meaningful ship 2026-10-15; 61 meaningful events in 30 days. HEY lists 2 things it does not know (2 NOT_VERIFIED) under unknowns.",
+    "contentOrigin": "derived"
+  },
+  "answerStatus": "DERIVED",
+  "claims": [
+    {
+      "id": "summary.build",
+      "dimension": "build",
+      "statement": {
+        "text": "Shipping: 61 meaningful events in 30 days; latest ship 2 days ago.",
+        "contentOrigin": "derived"
+      },
+      "status": "DERIVED",
+      "value": null,
+      "source": {
+        "name": "hey",
+        "type": "hey_rule"
+      },
+      "observedAt": "2026-10-15T12:15:43.000Z",
+      "occurredAt": null,
+      "precision": null,
+      "freshness": "weekly",
+      "evidence": [
+        {
+          "id": "ship:c641db17-3dca-46de-b77d-dba54669e853",
+          "receiptUrl": "https://heyresearch.xyz/api/evidence/ship%3Ac641db17-3dca-46de-b77d-dba54669e853",
+          "sourceUrl": "https://robinhoodchain.blockscout.com/address/0xa635d7c2e2261bd163ce0da69cdd85aa3cbd33b3"
+        }
+      ],
+      "explainUrl": "https://heyresearch.xyz/api/projects/loom/timeline",
+      "evidenceKind": "evidence_record"
+    },
+    {
+      "id": "summary.usage",
+      "dimension": "usage",
+      "statement": {
+        "text": "21 of 28 watched contracts active · 14,286 calls in 7 days (5,050 calls to the contracts' own functions; 9,236 ERC-20 token transfers and approvals, which trading alone produces).",
+        "contentOrigin": "derived"
+      },
+      "status": "FACT",
+      "value": null,
+      "source": {
+        "name": "decoded contract calls",
+        "type": "chain"
+      },
+      "observedAt": "2026-10-17T00:48:29.617Z",
+      "occurredAt": null,
+      "precision": null,
+      "freshness": "daily",
+      "evidence": [],
+      "explainUrl": "https://heyresearch.xyz/api/projects/loom/usage",
+      "contextOnly": true,
+      "evidenceKind": "usage_reading"
+    },
+    {
+      "id": "summary.market",
+      "dimension": "market",
+      "statement": {
+        "text": "Active market · market cap $253K · current liquidity $104K · reading under an hour old (DEX Screener).",
+        "contentOrigin": "derived"
+      },
+      "status": "FACT",
+      "value": null,
+      "source": {
+        "name": "market readings",
+        "type": "market_provider"
+      },
+      "observedAt": "2026-10-17T22:54:56.989Z",
+      "occurredAt": null,
+      "precision": null,
+      "freshness": "live",
+      "evidence": [],
+      "explainUrl": "https://heyresearch.xyz/api/projects/loom/market",
+      "contextOnly": true,
+      "evidenceKind": "market_reading"
+    },
+    {
+      "id": "summary.contract",
+      "dimension": "contract",
+      "statement": {
+        "text": "50 contracts on record for code changes, 1 with verified source; latest change 2 days ago: Deployed a new contract: 0xa635…33b3.",
+        "contentOrigin": "external_source",
+        "source": "research_summary_quoting_source",
+        "sourceUrl": "https://robinhoodchain.blockscout.com/address/0xa635d7c2e2261bd163ce0da69cdd85aa3cbd33b3"
+      },
+      "status": "FACT",
+      "value": null,
+      "source": {
+        "name": "Explorer",
+        "type": "chain"
+      },
+      "observedAt": "2026-10-17T04:16:01.570Z",
+      "occurredAt": null,
+      "precision": null,
+      "freshness": "daily",
+      "evidence": [
+        {
+          "id": "ship:c641db17-3dca-46de-b77d-dba54669e853",
+          "receiptUrl": "https://heyresearch.xyz/api/evidence/ship%3Ac641db17-3dca-46de-b77d-dba54669e853",
+          "sourceUrl": "https://robinhoodchain.blockscout.com/address/0xa635d7c2e2261bd163ce0da69cdd85aa3cbd33b3"
+        }
+      ],
+      "explainUrl": "https://heyresearch.xyz/api/projects/loom/contracts",
+      "evidenceKind": "evidence_record"
+    },
+    {
+      "id": "summary.latestChange",
+      "dimension": "latestChange",
+      "statement": {
+        "text": "Market event yesterday: $55K traded on 2026-10-16, 4.6× a typical day. Context, not building.",
+        "contentOrigin": "derived"
+      },
+      "status": "DERIVED",
+      "value": null,
+      "source": {
+        "name": "hey",
+        "type": "hey_rule"
+      },
+      "observedAt": "2026-10-16T18:14:43.151Z",
+      "occurredAt": null,
+      "precision": null,
+      "freshness": "daily",
+      "evidence": [
+        {
+          "id": "signal:28846a3a-9d16-4d5f-a350-333018d19d76",
+          "receiptUrl": "https://heyresearch.xyz/api/evidence/signal%3A28846a3a-9d16-4d5f-a350-333018d19d76"
+        }
+      ],
+      "explainUrl": "https://heyresearch.xyz/api/changes?project=loom",
+      "contextOnly": true,
+      "evidenceKind": "evidence_record"
+    },
+    {
+      "id": "summary.unknown",
+      "dimension": "unknown",
+      "statement": {
+        "text": "1 gap: Published packages (not enough yet). Packages name its repository, but none is confirmed as the project’s own.",
+        "contentOrigin": "derived"
+      },
+      "status": "UNKNOWN",
+      "value": null,
+      "source": null,
+      "observedAt": null,
+      "occurredAt": null,
+      "precision": null,
+      "freshness": "unknown",
+      "evidence": [],
+      "explainUrl": "https://heyresearch.xyz/api/projects/loom/coverage",
+      "reason": "claimed_package_links_only",
+      "evidenceKind": "not_held"
+    },
+    {
+      "id": "build.activity_status",
+      "dimension": "build",
+      "statement": {
+        "text": "Activity status SHIPPING under HEY's activity rule (hbm-v31).",
+        "contentOrigin": "derived"
+      },
+      "status": "DERIVED",
+      "value": "SHIPPING",
+      "source": {
+        "name": "hey",
+        "type": "hey_rule"
+      },
+      "observedAt": "2026-10-17T21:37:52.542Z",
+      "occurredAt": null,
+      "precision": null,
+      "freshness": "recent",
+      "evidence": [
+        {
+          "id": "ship:c641db17-3dca-46de-b77d-dba54669e853",
+          "receiptUrl": "https://heyresearch.xyz/api/evidence/ship%3Ac641db17-3dca-46de-b77d-dba54669e853"
+        },
+        {
+          "id": "ship:46df1494-b5a6-4d54-8238-89627c537704",
+          "receiptUrl": "https://heyresearch.xyz/api/evidence/ship%3A46df1494-b5a6-4d54-8238-89627c537704"
+        },
+        {
+          "id": "ship:c0de89f7-a4d6-4fb4-b1ee-f9682e7d34cb",
+          "receiptUrl": "https://heyresearch.xyz/api/evidence/ship%3Ac0de89f7-a4d6-4fb4-b1ee-f9682e7d34cb"
+        },
+        {
+          "id": "ship:8d2eeac3-3025-4167-b6dc-f73ca26e62d5",
+          "receiptUrl": "https://heyresearch.xyz/api/evidence/ship%3A8d2eeac3-3025-4167-b6dc-f73ca26e62d5"
+        },
+        {
+          "id": "ship:a919092f-7f30-45fa-9ac3-4a1dbe102568",
+          "receiptUrl": "https://heyresearch.xyz/api/evidence/ship%3Aa919092f-7f30-45fa-9ac3-4a1dbe102568"
+        }
+      ],
+      "explainUrl": "https://heyresearch.xyz/api/projects/loom/explain?fact=activity.status",
+      "evidenceKind": "rule_output"
+    },
+    {
+      "id": "build.last_meaningful_ship",
+      "dimension": "build",
+      "statement": {
+        "text": "The newest meaningful ship HEY recorded is dated 2026-10-15.",
+        "contentOrigin": "derived"
+      },
+      "status": "FACT",
+      "value": "2026-10-15T12:15:43.000Z",
+      "source": {
+        "name": "builder sources",
+        "type": "builder_source"
+      },
+      "observedAt": "2026-10-17T21:37:52.542Z",
+      "occurredAt": "2026-10-15T12:15:43.000Z",
+      "precision": "EXACT",
+      "freshness": "recent",
+      "evidence": [
+        {
+          "id": "ship:c641db17-3dca-46de-b77d-dba54669e853",
+          "receiptUrl": "https://heyresearch.xyz/api/evidence/ship%3Ac641db17-3dca-46de-b77d-dba54669e853",
+          "sourceUrl": "https://robinhoodchain.blockscout.com/address/0xa635d7c2e2261bd163ce0da69cdd85aa3cbd33b3"
+        }
+      ],
+      "explainUrl": "https://heyresearch.xyz/api/projects/loom/explain?fact=activity.status",
+      "evidenceKind": "evidence_record"
+    },
+    {
+      "id": "build.meaningful_events_30d",
+      "dimension": "build",
+      "statement": {
+        "text": "61 meaningful building events in the last 30 days.",
+        "contentOrigin": "derived"
+      },
+      "status": "DERIVED",
+      "value": 61,
+      "source": {
+        "name": "hey",
+        "type": "hey_rule"
+      },
+      "observedAt": "2026-10-17T21:37:52.542Z",
+      "occurredAt": null,
+      "precision": "WINDOW",
+      "freshness": "recent",
+      "evidence": [
+        {
+          "id": "ship:c641db17-3dca-46de-b77d-dba54669e853",
+          "receiptUrl": "https://heyresearch.xyz/api/evidence/ship%3Ac641db17-3dca-46de-b77d-dba54669e853",
+          "sourceUrl": "https://robinhoodchain.blockscout.com/address/0xa635d7c2e2261bd163ce0da69cdd85aa3cbd33b3"
+        }
+      ],
+      "explainUrl": "https://heyresearch.xyz/api/projects/loom/explain?fact=activity.status",
+      "evidenceKind": "rule_output"
+    },
+    {
+      "id": "build.momentum",
+      "dimension": "build",
+      "statement": {
+        "text": "Build Momentum 84.2 (0–100, from development evidence only; never price).",
+        "contentOrigin": "derived"
+      },
+      "status": "DERIVED",
+      "value": 84.2,
+      "source": {
+        "name": "hey",
+        "type": "hey_rule"
+      },
+      "observedAt": "2026-10-17T21:37:52.542Z",
+      "occurredAt": null,
+      "precision": null,
+      "freshness": "recent",
+      "evidence": [
+        {
+          "id": "ship:c641db17-3dca-46de-b77d-dba54669e853",
+          "receiptUrl": "https://heyresearch.xyz/api/evidence/ship%3Ac641db17-3dca-46de-b77d-dba54669e853"
+        },
+        {
+          "id": "ship:46df1494-b5a6-4d54-8238-89627c537704",
+          "receiptUrl": "https://heyresearch.xyz/api/evidence/ship%3A46df1494-b5a6-4d54-8238-89627c537704"
+        },
+        {
+          "id": "ship:c0de89f7-a4d6-4fb4-b1ee-f9682e7d34cb",
+          "receiptUrl": "https://heyresearch.xyz/api/evidence/ship%3Ac0de89f7-a4d6-4fb4-b1ee-f9682e7d34cb"
+        },
+        {
+          "id": "ship:8d2eeac3-3025-4167-b6dc-f73ca26e62d5",
+          "receiptUrl": "https://heyresearch.xyz/api/evidence/ship%3A8d2eeac3-3025-4167-b6dc-f73ca26e62d5"
+        },
+        {
+          "id": "ship:a919092f-7f30-45fa-9ac3-4a1dbe102568",
+          "receiptUrl": "https://heyresearch.xyz/api/evidence/ship%3Aa919092f-7f30-45fa-9ac3-4a1dbe102568"
+        }
+      ],
+      "explainUrl": "https://heyresearch.xyz/api/projects/loom/explain?fact=build.momentum",
+      "evidenceKind": "rule_output"
+    },
+    {
+      "id": "build.still_building",
+      "dimension": "build",
+      "statement": {
+        "text": "Still Building does not hold for this project now.",
+        "contentOrigin": "hey"
+      },
+      "status": "DERIVED",
+      "value": false,
+      "source": {
+        "name": "hey",
+        "type": "hey_rule"
+      },
+      "observedAt": "2026-10-17T21:37:52.542Z",
+      "occurredAt": null,
+      "precision": null,
+      "freshness": "recent",
+      "evidence": [],
+      "explainUrl": "https://heyresearch.xyz/api/projects/loom/explain?fact=still_building",
+      "evidenceKind": "rule_output"
+    },
+    {
+      "id": "build.under_the_radar",
+      "dimension": "build",
+      "statement": {
+        "text": "Under the Radar does not hold for this project now: measured, and not met (Discovery Gap 10.8).",
+        "contentOrigin": "derived"
+      },
+      "status": "DERIVED",
+      "value": "NOT_HELD",
+      "source": {
+        "name": "hey",
+        "type": "hey_rule"
+      },
+      "observedAt": "2026-10-17T21:37:52.542Z",
+      "occurredAt": null,
+      "precision": null,
+      "freshness": "recent",
+      "evidence": [],
+      "explainUrl": "https://heyresearch.xyz/api/projects/loom/explain?fact=discovery_gap",
+      "evidenceKind": "rule_output"
+    },
+    {
+      "id": "contract.token_verification",
+      "dimension": "contract",
+      "statement": {
+        "text": "The project itself names this token contract (its own site, a deploy record in its own repository, or an on-chain signature).",
+        "contentOrigin": "hey"
+      },
+      "status": "FACT",
+      "value": "VERIFIED",
+      "source": {
+        "name": "project’s own voice",
+        "type": "project_site"
+      },
+      "observedAt": "2026-09-25T13:23:37.942Z",
+      "occurredAt": null,
+      "precision": null,
+      "freshness": "weekly",
+      "evidence": [],
+      "explainUrl": "https://heyresearch.xyz/api/projects/loom/explain?fact=token.verification",
+      "evidenceKind": "registry_record",
+      "reason": "site_names_contract"
+    },
+    {
+      "id": "market.valuation",
+      "dimension": "market",
+      "statement": {
+        "text": "Market cap about $253,064 from dexscreener: market context only, never a builder judgement.",
+        "contentOrigin": "derived"
+      },
+      "status": "FACT",
+      "value": 253064,
+      "source": {
+        "name": "dexscreener",
+        "type": "market_provider"
+      },
+      "observedAt": "2026-10-17T22:54:56.989Z",
+      "occurredAt": null,
+      "precision": null,
+      "freshness": "live",
+      "evidence": [],
+      "explainUrl": "https://heyresearch.xyz/api/projects/loom/explain?fact=market.valuation",
+      "contextOnly": true,
+      "evidenceKind": "market_reading"
+    }
+  ],
+  "unknowns": [
+    {
+      "category": "NOT_VERIFIED",
+      "dimension": "projectOwner",
+      "statement": {
+        "text": "No owner has proved control of this project’s site, repository or contract to HEY.",
+        "contentOrigin": "hey"
+      },
+      "doNotConclude": {
+        "text": "HEY has not verified this link. Do not treat it as the project’s own, and do not treat it as false either.",
+        "contentOrigin": "hey"
+      },
+      "reason": "owner_not_verified"
+    },
+    {
+      "category": "NOT_VERIFIED",
+      "dimension": "package",
+      "statement": {
+        "text": "Packages name its repository, but none is confirmed as the project’s own.",
+        "contentOrigin": "hey"
+      },
+      "doNotConclude": {
+        "text": "HEY has not verified this link. Do not treat it as the project’s own, and do not treat it as false either.",
+        "contentOrigin": "hey"
+      },
+      "coverageState": "NOT_ENOUGH_YET",
+      "reason": "claimed_package_links_only",
+      "asOf": "2026-10-17T22:04:17.993Z",
+      "detailUrl": "https://heyresearch.xyz/api/projects/loom/coverage"
+    }
+  ],
+  "freshness": [
+    {
+      "family": "builder_sources",
+      "observedAt": "2026-10-17T22:30:12.377Z",
+      "dataAsOf": "2026-10-17T22:30:12.377Z",
+      "freshnessStatus": "recent",
+      "staleAfterHours": 72,
+      "refresh": {
+        "job": "REFRESH_GITHUB",
+        "everyMinutes": 60,
+        "slowestMinutes": 4320,
+        "basis": {
+          "text": "Repositories, release feeds and changelogs are re-read by refresh tier (HOT hourly, WARM every 6 hours, COOL daily, COLD every 3 days); the tier follows the activity status and the last meaningful ship. A failing source backs off. A reading is stale after 72 hours, or one and a half cadences of its tier where that is longer (108 hours on COLD).",
+          "contentOrigin": "hey"
+        }
+      },
+      "nextExpectedRefresh": "2026-10-17T23:30:12.377Z"
+    },
+    {
+      "family": "market",
+      "observedAt": "2026-10-17T22:54:56.989Z",
+      "dataAsOf": "2026-10-17T22:54:56.989Z",
+      "freshnessStatus": "live",
+      "staleAfterHours": 24,
+      "refresh": {
+        "job": "REFRESH_MARKET_BATCH",
+        "everyMinutes": 10,
+        "slowestMinutes": 1440,
+        "basis": {
+          "text": "Market readings are refreshed by tier (HOT every 10 minutes, WARM hourly, COOL every 6 hours, COLD daily); a token priced only by the paced fallback waits at least 2 hours, and one with no reading backs off up to 14 days. A reading is stale after 24 hours, or one and a half cadences of its tier where that is longer (36 hours on COLD).",
+          "contentOrigin": "hey"
+        }
+      },
+      "nextExpectedRefresh": "2026-10-17T23:04:56.989Z"
+    },
+    {
+      "family": "contracts",
+      "observedAt": "2026-10-17T04:16:01.570Z",
+      "dataAsOf": "2026-10-17T04:16:01.570Z",
+      "freshnessStatus": "daily",
+      "staleAfterHours": 252,
+      "refresh": {
+        "job": "CONTRACT_ABI_WATCH",
+        "everyMinutes": 60,
+        "slowestMinutes": 10080,
+        "basis": {
+          "text": "The contract upgrade and interface watches run hourly over batches of watched contracts; how soon one contract is read again depends on the batch, within 7 days. A reading is stale after one and a half of those.",
+          "contentOrigin": "hey"
+        }
+      },
+      "nextExpectedRefresh": null,
+      "nextExpectedRefreshReason": "variable_cadence"
+    },
+    {
+      "family": "locks",
+      "observedAt": null,
+      "dataAsOf": null,
+      "freshnessStatus": "unknown",
+      "staleAfterHours": 48,
+      "refresh": {
+        "job": "SYNC_HOODLOCK",
+        "everyMinutes": 360,
+        "slowestMinutes": 360,
+        "basis": {
+          "text": "HoodLock locks and unlocks are synced every 6 hours. Only HoodLock is read; other lockers are not.",
+          "contentOrigin": "hey"
+        }
+      },
+      "nextExpectedRefresh": null,
+      "nextExpectedRefreshReason": "never_read"
+    },
+    {
+      "family": "activity_score",
+      "observedAt": "2026-10-17T21:37:52.542Z",
+      "dataAsOf": "2026-10-17T21:37:52.542Z",
+      "freshnessStatus": "recent",
+      "staleAfterHours": 24,
+      "refresh": {
+        "job": "RECALCULATE_SCORES",
+        "everyMinutes": 720,
+        "slowestMinutes": 720,
+        "basis": {
+          "text": "A project is due for rescoring once its score is 12 hours old (RESCORE_MIN_INTERVAL_HOURS); a newly recorded ship queues a rescore within the quarter hour. The next refresh is the latest expected time, not a promise: a backlog can delay it.",
+          "contentOrigin": "hey"
+        }
+      },
+      "nextExpectedRefresh": "2026-10-18T09:37:52.542Z"
+    },
+    {
+      "family": "usage",
+      "observedAt": "2026-10-17T00:48:29.617Z",
+      "dataAsOf": "2026-10-16T00:00:00.000Z",
+      "freshnessStatus": "daily",
+      "staleAfterHours": 72,
+      "refresh": {
+        "job": "ROLLUP_USAGE_DAYS",
+        "everyMinutes": 360,
+        "slowestMinutes": 360,
+        "basis": {
+          "text": "Product usage is rolled up from decoded calls every 6 hours, per UTC day, for contracts in the method watch.",
+          "contentOrigin": "hey"
+        }
+      },
+      "nextExpectedRefresh": null,
+      "nextExpectedRefreshReason": "overdue"
+    },
+    {
+      "family": "peers",
+      "observedAt": "2026-10-17T02:08:30.445Z",
+      "dataAsOf": "2026-10-17T02:08:30.445Z",
+      "freshnessStatus": "daily",
+      "staleAfterHours": 36,
+      "refresh": {
+        "job": "REFRESH_PEER_CONTEXT",
+        "everyMinutes": 1440,
+        "slowestMinutes": 1440,
+        "basis": {
+          "text": "Peer cohorts are recomputed once a day.",
+          "contentOrigin": "hey"
+        }
+      },
+      "nextExpectedRefresh": "2026-10-18T02:08:30.445Z"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ship:c641db17-3dca-46de-b77d-dba54669e853",
+      "receiptUrl": "https://heyresearch.xyz/api/evidence/ship%3Ac641db17-3dca-46de-b77d-dba54669e853",
+      "sourceUrl": "https://robinhoodchain.blockscout.com/address/0xa635d7c2e2261bd163ce0da69cdd85aa3cbd33b3"
+    },
+    {
+      "id": "signal:28846a3a-9d16-4d5f-a350-333018d19d76",
+      "receiptUrl": "https://heyresearch.xyz/api/evidence/signal%3A28846a3a-9d16-4d5f-a350-333018d19d76"
+    },
+    {
+      "id": "ship:46df1494-b5a6-4d54-8238-89627c537704",
+      "receiptUrl": "https://heyresearch.xyz/api/evidence/ship%3A46df1494-b5a6-4d54-8238-89627c537704"
+    },
+    {
+      "id": "ship:c0de89f7-a4d6-4fb4-b1ee-f9682e7d34cb",
+      "receiptUrl": "https://heyresearch.xyz/api/evidence/ship%3Ac0de89f7-a4d6-4fb4-b1ee-f9682e7d34cb"
+    },
+    {
+      "id": "ship:8d2eeac3-3025-4167-b6dc-f73ca26e62d5",
+      "receiptUrl": "https://heyresearch.xyz/api/evidence/ship%3A8d2eeac3-3025-4167-b6dc-f73ca26e62d5"
+    },
+    {
+      "id": "ship:a919092f-7f30-45fa-9ac3-4a1dbe102568",
+      "receiptUrl": "https://heyresearch.xyz/api/evidence/ship%3Aa919092f-7f30-45fa-9ac3-4a1dbe102568"
+    },
+    {
+      "id": "v4pool:4663:0x7f43e1fe72731a52ed0ab923a4874b3687ad9901ff0f34b3f5289036071ab986",
+      "receiptUrl": "https://heyresearch.xyz/api/evidence/v4pool%3A4663%3A0x7f43e1fe72731a52ed0ab923a4874b3687ad9901ff0f34b3f5289036071ab986",
+      "sourceUrl": "https://robinhoodchain.blockscout.com/tx/0x29756aea5e07e7e76db3ce469d9dd62de4f63844d37b6c870c30a33a6f9c1d79"
+    },
+    {
+      "id": "v4hook:4663:0x5b907b52eacbcee78f2c56a6e74f5cf04a96e0cc",
+      "receiptUrl": "https://heyresearch.xyz/api/evidence/v4hook%3A4663%3A0x5b907b52eacbcee78f2c56a6e74f5cf04a96e0cc",
+      "sourceUrl": "https://robinhoodchain.blockscout.com/address/0x5b907b52eacbcee78f2c56a6e74f5cf04a96e0cc"
+    },
+    {
+      "id": "v4pool:4663:0x615735c9872d1893bfbfe0680e2583d5ccc6a9b042eb50d594c809be7b1c2716",
+      "receiptUrl": "https://heyresearch.xyz/api/evidence/v4pool%3A4663%3A0x615735c9872d1893bfbfe0680e2583d5ccc6a9b042eb50d594c809be7b1c2716",
+      "sourceUrl": "https://robinhoodchain.blockscout.com/tx/0xc2e79f2168ab026e6ed35b360251dcdc25d1c9c5c9a354071a3695ab77932a22"
+    },
+    {
+      "id": "v4hook:4663:0x3ad87f5b9cf8f17ed39d787eef3d9d19053d28cc",
+      "receiptUrl": "https://heyresearch.xyz/api/evidence/v4hook%3A4663%3A0x3ad87f5b9cf8f17ed39d787eef3d9d19053d28cc",
+      "sourceUrl": "https://robinhoodchain.blockscout.com/address/0x3ad87f5b9cf8f17ed39d787eef3d9d19053d28cc"
+    },
+    {
+      "id": "v4pool:4663:0x8a7b95ef64f99da5b5b3e5015c163a6ef0d0e2d8b4a4d43396cee6a4ce2d86e7",
+      "receiptUrl": "https://heyresearch.xyz/api/evidence/v4pool%3A4663%3A0x8a7b95ef64f99da5b5b3e5015c163a6ef0d0e2d8b4a4d43396cee6a4ce2d86e7",
+      "sourceUrl": "https://robinhoodchain.blockscout.com/tx/0x2f311fbbe88952ae8f437628a62bbe40d27d5a4563ab700090656c9bca70684b"
+    },
+    {
+      "id": "v4hook:4663:0x19e65e56b16c62a67014faace56863e909cb2888",
+      "receiptUrl": "https://heyresearch.xyz/api/evidence/v4hook%3A4663%3A0x19e65e56b16c62a67014faace56863e909cb2888",
+      "sourceUrl": "https://robinhoodchain.blockscout.com/address/0x19e65e56b16c62a67014faace56863e909cb2888"
+    }
+  ],
+  "data": {
+    "identity": {
+      "slug": "loom",
+      "name": {
+        "text": "Loom",
+        "contentOrigin": "external_source",
+        "source": "project_record"
+      },
+      "symbol": {
+        "text": "LOOM",
+        "contentOrigin": "external_source",
+        "source": "token_metadata"
+      },
+      "projectKind": "OTHER",
+      "researchLevel": "VERIFIED_BUILDER",
+      "catalogStatus": "VERIFIED_BUILDER",
+      "narrative": {
+        "slug": "stockfi",
+        "name": {
+          "text": "StockFi",
+          "contentOrigin": "derived"
+        }
+      },
+      "firstRecordedByHeyAt": "2026-09-16T19:01:58.676Z",
+      "websiteUrl": "https://loomdesk.trade/",
+      "url": "https://heyresearch.xyz/project/loom"
+    },
+    "builderState": {
+      "activityStatus": "SHIPPING",
+      "activityMeasured": true,
+      "lastMeaningfulShipAt": "2026-10-15T12:15:43.000Z",
+      "meaningfulEvents30d": 61,
+      "buildMomentum": 84.2,
+      "stillBuilding": false,
+      "stillBuildingState": "NOT_HELD",
+      "underTheRadar": {
+        "state": "NOT_HELD"
+      },
+      "discoveryGap": 10.8,
+      "scoringVersion": "hbm-v31",
+      "explainUrl": "https://heyresearch.xyz/api/projects/loom/explain?fact=activity.status"
+    },
+    "latestMeaningfulChange": {
+      "id": "ship:c641db17-3dca-46de-b77d-dba54669e853",
+      "revision": 1,
+      "type": "contract.followup_deployed",
+      "domain": "contract",
+      "occurredAt": "2026-10-15T12:15:43.000Z",
+      "precision": "EXACT",
+      "detectedAt": "2026-10-17T01:17:17.977Z",
+      "recordedAt": "2026-10-17T01:20:04.916Z",
+      "summary": {
+        "text": "Deployed a new contract: 0xa635…33b3",
+        "contentOrigin": "external_source",
+        "source": "source_title",
+        "sourceUrl": "https://robinhoodchain.blockscout.com/address/0xa635d7c2e2261bd163ce0da69cdd85aa3cbd33b3"
+      },
+      "status": "FACT",
+      "countsAsBuilding": true,
+      "project": {
+        "slug": "loom",
+        "url": "https://heyresearch.xyz/project/loom"
+      },
+      "evidence": [
+        {
+          "id": "ship:c641db17-3dca-46de-b77d-dba54669e853",
+          "receiptUrl": "https://heyresearch.xyz/api/evidence/ship%3Ac641db17-3dca-46de-b77d-dba54669e853",
+          "sourceUrl": "https://robinhoodchain.blockscout.com/address/0xa635d7c2e2261bd163ce0da69cdd85aa3cbd33b3"
+        }
+      ],
+      "source": "explorer"
+    },
+    "recentChanges": {
+      "available": true,
+      "items": [
+        {
+          "id": "signal:28846a3a-9d16-4d5f-a350-333018d19d76",
+          "revision": 1,
+          "type": "market.volume_spike",
+          "domain": "market",
+          "occurredAt": "2026-10-16T18:14:43.151Z",
+          "precision": "WINDOW",
+          "detectedAt": "2026-10-16T18:14:46.551Z",
+          "recordedAt": "2026-10-16T18:15:03.227Z",
+          "summary": {
+            "text": "$55K traded on 2026-10-16, 4.6× a typical day",
+            "contentOrigin": "derived"
+          },
+          "status": "DERIVED",
+          "countsAsBuilding": false,
+          "project": {
+            "slug": "loom",
+            "url": "https://heyresearch.xyz/project/loom"
+          },
+          "evidence": [
+            {
+              "id": "signal:28846a3a-9d16-4d5f-a350-333018d19d76",
+              "receiptUrl": "https://heyresearch.xyz/api/evidence/signal%3A28846a3a-9d16-4d5f-a350-333018d19d76"
+            }
+          ],
+          "source": "hey_signal"
+        },
+        {
+          "id": "v4pools:4663:0x5b907b52eacbcee78f2c56a6e74f5cf04a96e0cc:2026-10-16",
+          "revision": 1,
+          "type": "contract.v4_pool_initialized",
+          "domain": "contract",
+          "occurredAt": null,
+          "precision": "OBSERVED",
+          "detectedAt": "2026-10-16T05:09:07.926Z",
+          "recordedAt": "2026-10-16T05:10:02.975Z",
+          "summary": {
+            "text": "New Uniswap v4 pool observed using Loom’s attributed hook on 16 Oct",
+            "contentOrigin": "derived"
+          },
+          "status": "FACT",
+          "countsAsBuilding": false,
+          "project": {
+            "slug": "loom",
+            "url": "https://heyresearch.xyz/project/loom"
+          },
+          "evidence": [
+            {
+              "id": "v4pool:4663:0x7f43e1fe72731a52ed0ab923a4874b3687ad9901ff0f34b3f5289036071ab986",
+              "receiptUrl": "https://heyresearch.xyz/api/evidence/v4pool%3A4663%3A0x7f43e1fe72731a52ed0ab923a4874b3687ad9901ff0f34b3f5289036071ab986",
+              "sourceUrl": "https://robinhoodchain.blockscout.com/tx/0x29756aea5e07e7e76db3ce469d9dd62de4f63844d37b6c870c30a33a6f9c1d79"
+            },
+            {
+              "id": "v4hook:4663:0x5b907b52eacbcee78f2c56a6e74f5cf04a96e0cc",
+              "receiptUrl": "https://heyresearch.xyz/api/evidence/v4hook%3A4663%3A0x5b907b52eacbcee78f2c56a6e74f5cf04a96e0cc",
+              "sourceUrl": "https://robinhoodchain.blockscout.com/address/0x5b907b52eacbcee78f2c56a6e74f5cf04a96e0cc"
+            }
+          ],
+          "source": "chain_log"
+        },
+        {
+          "id": "ship:c641db17-3dca-46de-b77d-dba54669e853",
+          "revision": 1,
+          "type": "contract.followup_deployed",
+          "domain": "contract",
+          "occurredAt": "2026-10-15T12:15:43.000Z",
+          "precision": "EXACT",
+          "detectedAt": "2026-10-17T01:17:17.977Z",
+          "recordedAt": "2026-10-17T01:20:04.916Z",
+          "summary": {
+            "text": "Deployed a new contract: 0xa635…33b3",
+            "contentOrigin": "external_source",
+            "source": "source_title",
+            "sourceUrl": "https://robinhoodchain.blockscout.com/address/0xa635d7c2e2261bd163ce0da69cdd85aa3cbd33b3"
+          },
+          "status": "FACT",
+          "countsAsBuilding": true,
+          "project": {
+            "slug": "loom",
+            "url": "https://heyresearch.xyz/project/loom"
+          },
+          "evidence": [
+            {
+              "id": "ship:c641db17-3dca-46de-b77d-dba54669e853",
+              "receiptUrl": "https://heyresearch.xyz/api/evidence/ship%3Ac641db17-3dca-46de-b77d-dba54669e853",
+              "sourceUrl": "https://robinhoodchain.blockscout.com/address/0xa635d7c2e2261bd163ce0da69cdd85aa3cbd33b3"
+            }
+          ],
+          "source": "explorer"
+        },
+        {
+          "id": "v4pools:4663:0x3ad87f5b9cf8f17ed39d787eef3d9d19053d28cc:2026-10-15",
+          "revision": 1,
+          "type": "contract.v4_pool_initialized",
+          "domain": "contract",
+          "occurredAt": null,
+          "precision": "OBSERVED",
+          "detectedAt": "2026-10-15T00:06:31.134Z",
+          "recordedAt": "2026-10-15T18:40:01.176Z",
+          "summary": {
+            "text": "New Uniswap v4 pool observed using Loom’s attributed hook on 15 Oct",
+            "contentOrigin": "derived"
+          },
+          "status": "FACT",
+          "countsAsBuilding": false,
+          "project": {
+            "slug": "loom",
+            "url": "https://heyresearch.xyz/project/loom"
+          },
+          "evidence": [
+            {
+              "id": "v4pool:4663:0x615735c9872d1893bfbfe0680e2583d5ccc6a9b042eb50d594c809be7b1c2716",
+              "receiptUrl": "https://heyresearch.xyz/api/evidence/v4pool%3A4663%3A0x615735c9872d1893bfbfe0680e2583d5ccc6a9b042eb50d594c809be7b1c2716",
+              "sourceUrl": "https://robinhoodchain.blockscout.com/tx/0xc2e79f2168ab026e6ed35b360251dcdc25d1c9c5c9a354071a3695ab77932a22"
+            },
+            {
+              "id": "v4hook:4663:0x3ad87f5b9cf8f17ed39d787eef3d9d19053d28cc",
+              "receiptUrl": "https://heyresearch.xyz/api/evidence/v4hook%3A4663%3A0x3ad87f5b9cf8f17ed39d787eef3d9d19053d28cc",
+              "sourceUrl": "https://robinhoodchain.blockscout.com/address/0x3ad87f5b9cf8f17ed39d787eef3d9d19053d28cc"
+            }
+          ],
+          "source": "chain_log"
+        },
+        {
+          "id": "v4pools:4663:0x19e65e56b16c62a67014faace56863e909cb2888:2026-10-15",
+          "revision": 1,
+          "type": "contract.v4_pool_initialized",
+          "domain": "contract",
+          "occurredAt": null,
+          "precision": "OBSERVED",
+          "detectedAt": "2026-10-15T00:06:31.134Z",
+          "recordedAt": "2026-10-15T18:40:01.176Z",
+          "summary": {
+            "text": "New Uniswap v4 pool observed using Loom’s attributed hook on 15 Oct",
+            "contentOrigin": "derived"
+          },
+          "status": "FACT",
+          "countsAsBuilding": false,
+          "project": {
+            "slug": "loom",
+            "url": "https://heyresearch.xyz/project/loom"
+          },
+          "evidence": [
+            {
+              "id": "v4pool:4663:0x8a7b95ef64f99da5b5b3e5015c163a6ef0d0e2d8b4a4d43396cee6a4ce2d86e7",
+              "receiptUrl": "https://heyresearch.xyz/api/evidence/v4pool%3A4663%3A0x8a7b95ef64f99da5b5b3e5015c163a6ef0d0e2d8b4a4d43396cee6a4ce2d86e7",
+              "sourceUrl": "https://robinhoodchain.blockscout.com/tx/0x2f311fbbe88952ae8f437628a62bbe40d27d5a4563ab700090656c9bca70684b"
+            },
+            {
+              "id": "v4hook:4663:0x19e65e56b16c62a67014faace56863e909cb2888",
+              "receiptUrl": "https://heyresearch.xyz/api/evidence/v4hook%3A4663%3A0x19e65e56b16c62a67014faace56863e909cb2888",
+              "sourceUrl": "https://robinhoodchain.blockscout.com/address/0x19e65e56b16c62a67014faace56863e909cb2888"
+            }
+          ],
+          "source": "chain_log"
+        }
+      ],
+      "url": "https://heyresearch.xyz/api/changes?project=loom"
+    },
+    "contractIdentity": {
+      "token": {
+        "chainId": 4663,
+        "address": "0xdd0c034dada72325bc893fa39bc392e82bf847d7",
+        "verification": "VERIFIED",
+        "verificationReason": "site_names_contract"
+      },
+      "ownerVerified": false,
+      "contractsUrl": "https://heyresearch.xyz/api/projects/loom/contracts"
+    },
+    "marketContext": {
+      "contextOnly": true,
+      "valuation": {
+        "usd": 253064,
+        "kind": "marketCap",
+        "source": "dexscreener",
+        "observedAt": "2026-10-17T22:54:56.989Z"
+      },
+      "valuationWithheld": null,
+      "liquidityUsd": 103772.37,
+      "liquidityKind": "market",
+      "volume24hUsd": 13946.19,
+      "tokenMarketStatus": "ACTIVE_MARKET",
+      "tokenMarketLabel": "Active market",
+      "url": "https://heyresearch.xyz/api/projects/loom/market"
+    },
+    "usageContext": {
+      "contextOnly": true,
+      "state": "MEASURED",
+      "reason": "measured",
+      "windowDays": 7,
+      "calls": 14286,
+      "activeContracts": 21,
+      "watchedContracts": 28,
+      "observedAt": "2026-10-17T00:48:29.617Z",
+      "url": "https://heyresearch.xyz/api/projects/loom/usage"
+    }
+  },
+  "methodology": {
+    "rules": [
+      {
+        "id": "activity.status",
+        "version": "hbm-v31"
+      },
+      {
+        "id": "research_summary",
+        "version": "summary-v1"
+      },
+      {
+        "id": "peers",
+        "version": "peers-v1"
+      },
+      {
+        "id": "agent_freshness",
+        "version": "agent-freshness-v2"
+      },
+      {
+        "id": "machine_text",
+        "version": "machine-text-v1"
+      }
+    ],
+    "url": "https://heyresearch.xyz/methodology"
+  },
+  "links": {
+    "self": "https://heyresearch.xyz/api/agent/research_project?project=loom",
+    "page": "https://heyresearch.xyz/project/loom",
+    "canonical": [
+      "https://heyresearch.xyz/api/projects/loom/snapshot",
+      "https://heyresearch.xyz/api/projects/loom/coverage",
+      "https://heyresearch.xyz/api/projects/loom/explain",
+      "https://heyresearch.xyz/api/changes?project=loom"
+    ]
+  },
+  "citation": {
+    "kind": "hey_agent_answer",
+    "capability": "research_project",
+    "schemaVersion": "1",
+    "url": "https://heyresearch.xyz/api/agent/research_project?project=loom",
+    "asOf": "2026-10-17T22:58:26.632Z",
+    "project": "loom",
+    "scoringVersion": "hbm-v31",
+    "text": "Source: HEY Research Lab, builder research for Robinhood Chain — https://heyresearch.xyz/project/loom, as of 2026-10-17, rules hbm-v31"
+  },
+  "boundaries": {
+    "notAdvice": true,
+    "notProvided": [
+      "investment_recommendation",
+      "buy_or_sell_signal",
+      "price_prediction",
+      "price_target",
+      "position_size",
+      "leverage",
+      "stop_loss",
+      "ranking_by_expected_return",
+      "risk_score",
+      "safety_verdict",
+      "smart_money_label",
+      "wallet_pnl",
+      "wallet_profile"
+    ],
+    "marketIsContextOnly": true,
+    "disclaimer": {
+      "text": "Public, source-backed activity HEY recorded. Still Building means verified activity through a tracked market drawdown — it is not a prediction, not a ranking by price, and not investment advice. Few projects meet Still Building or Under the Radar at any time; both are strict by design, and list responses carry the counts.",
+      "contentOrigin": "hey"
+    }
+  },
+  "asOf": "2026-10-17T22:58:26.632Z"
+}

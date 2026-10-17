@@ -1,0 +1,222 @@
+{
+  "schema": "hey.agent-intelligence-response",
+  "schemaVersion": "1",
+  "capability": "research_project",
+  "status": "invalid_request",
+  "query": {
+    "chainId": 4663,
+    "q": "pepe"
+  },
+  "chain": {
+    "chainId": 4663,
+    "name": "Robinhood Chain"
+  },
+  "subject": null,
+  "answer": {
+    "text": "More than one published project matches that name or ticker: pepes, sample-builder-pepe-on-robinhood-chain, 0xpepesso-ai-pepe, artificial-pepe, bundle-pepe, doge-pepe, doge-pepe-5afebb, doge-pepe-f9e990 (the first 8 of 19, verified builders and active builders first). HEY does not guess: send one of them as project, or the contract as address.",
+    "contentOrigin": "derived"
+  },
+  "answerStatus": "UNKNOWN",
+  "claims": [],
+  "unknowns": [],
+  "freshness": [],
+  "evidence": [],
+  "data": null,
+  "methodology": {
+    "rules": [
+      {
+        "id": "agent_freshness",
+        "version": "agent-freshness-v2"
+      },
+      {
+        "id": "machine_text",
+        "version": "machine-text-v1"
+      }
+    ],
+    "url": "https://heyresearch.xyz/methodology"
+  },
+  "links": {
+    "self": "https://heyresearch.xyz/api/agent/research_project?q=pepe",
+    "canonical": []
+  },
+  "citation": null,
+  "boundaries": {
+    "notAdvice": true,
+    "notProvided": [
+      "investment_recommendation",
+      "buy_or_sell_signal",
+      "price_prediction",
+      "price_target",
+      "position_size",
+      "leverage",
+      "stop_loss",
+      "ranking_by_expected_return",
+      "risk_score",
+      "safety_verdict",
+      "smart_money_label",
+      "wallet_pnl",
+      "wallet_profile"
+    ],
+    "marketIsContextOnly": true,
+    "disclaimer": {
+      "text": "Public, source-backed activity HEY recorded. Still Building means verified activity through a tracked market drawdown — it is not a prediction, not a ranking by price, and not investment advice. Few projects meet Still Building or Under the Radar at any time; both are strict by design, and list responses carry the counts.",
+      "contentOrigin": "hey"
+    }
+  },
+  "error": {
+    "code": "ambiguous",
+    "message": {
+      "text": "More than one published project matches that name or ticker: pepes, sample-builder-pepe-on-robinhood-chain, 0xpepesso-ai-pepe, artificial-pepe, bundle-pepe, doge-pepe, doge-pepe-5afebb, doge-pepe-f9e990 (the first 8 of 19, verified builders and active builders first). HEY does not guess: send one of them as project, or the contract as address.",
+      "contentOrigin": "derived"
+    },
+    "candidates": [
+      {
+        "slug": "pepes",
+        "name": {
+          "text": "Pepes",
+          "contentOrigin": "external_source",
+          "source": "project_record"
+        },
+        "url": "https://heyresearch.xyz/project/pepes",
+        "token": {
+          "chainId": 4663,
+          "address": "0xe2c46c7068566740a33a4c93f5445b07bcfe5644"
+        },
+        "symbol": {
+          "text": "Pepes",
+          "contentOrigin": "external_source",
+          "source": "project_record"
+        },
+        "activityStatus": "SHIPPING",
+        "catalogStatus": "VERIFIED_BUILDER"
+      },
+      {
+        "slug": "sample-builder-pepe-on-robinhood-chain",
+        "name": {
+          "text": "PEPE on Robinhood Chain",
+          "contentOrigin": "external_source",
+          "source": "project_record"
+        },
+        "url": "https://heyresearch.xyz/project/sample-builder-pepe-on-robinhood-chain",
+        "activityStatus": "DORMANT",
+        "catalogStatus": "VERIFIED_BUILDER"
+      },
+      {
+        "slug": "0xpepesso-ai-pepe",
+        "name": {
+          "text": "AI Pepe",
+          "contentOrigin": "external_source",
+          "source": "project_record"
+        },
+        "url": "https://heyresearch.xyz/project/0xpepesso-ai-pepe",
+        "activityStatus": "DORMANT",
+        "catalogStatus": "QUALIFIED"
+      },
+      {
+        "slug": "artificial-pepe",
+        "name": {
+          "text": "Artificial Pepe",
+          "contentOrigin": "external_source",
+          "source": "project_record"
+        },
+        "url": "https://heyresearch.xyz/project/artificial-pepe",
+        "token": {
+          "chainId": 4663,
+          "address": "0x71dff63057274f5d20330c5f18b5922b97660f9c"
+        },
+        "symbol": {
+          "text": "AP",
+          "contentOrigin": "external_source",
+          "source": "project_record"
+        },
+        "activityStatus": "UNKNOWN",
+        "catalogStatus": "QUALIFIED"
+      },
+      {
+        "slug": "bundle-pepe",
+        "name": {
+          "text": "Bundle Pepe",
+          "contentOrigin": "external_source",
+          "source": "project_record"
+        },
+        "url": "https://heyresearch.xyz/project/bundle-pepe",
+        "token": {
+          "chainId": 4663,
+          "address": "0xbf818efe65aac127ac8f9fec6fec203ee222c851"
+        },
+        "symbol": {
+          "text": "BPEPE",
+          "contentOrigin": "external_source",
+          "source": "project_record"
+        },
+        "activityStatus": "UNKNOWN",
+        "catalogStatus": "QUALIFIED"
+      },
+      {
+        "slug": "doge-pepe",
+        "name": {
+          "text": "Doge Pepe",
+          "contentOrigin": "external_source",
+          "source": "project_record"
+        },
+        "url": "https://heyresearch.xyz/project/doge-pepe",
+        "token": {
+          "chainId": 4663,
+          "address": "0x5d38b6d14a453f346dc6e7804f6ea1433523060b"
+        },
+        "symbol": {
+          "text": "DOPE",
+          "contentOrigin": "external_source",
+          "source": "project_record"
+        },
+        "activityStatus": "UNKNOWN",
+        "catalogStatus": "QUALIFIED"
+      },
+      {
+        "slug": "doge-pepe-5afebb",
+        "name": {
+          "text": "Doge Pepe",
+          "contentOrigin": "external_source",
+          "source": "project_record"
+        },
+        "url": "https://heyresearch.xyz/project/doge-pepe-5afebb",
+        "token": {
+          "chainId": 4663,
+          "address": "0x5afebb4d6e0608236e731a5fafaf6dca2e0c9437"
+        },
+        "symbol": {
+          "text": "DOPE",
+          "contentOrigin": "external_source",
+          "source": "project_record"
+        },
+        "activityStatus": "UNKNOWN",
+        "catalogStatus": "QUALIFIED"
+      },
+      {
+        "slug": "doge-pepe-f9e990",
+        "name": {
+          "text": "Doge Pepe",
+          "contentOrigin": "external_source",
+          "source": "project_record"
+        },
+        "url": "https://heyresearch.xyz/project/doge-pepe-f9e990",
+        "token": {
+          "chainId": 4663,
+          "address": "0xf9e990ccb47806ac9268922bd21dc9a91c8e8899"
+        },
+        "symbol": {
+          "text": "DOPE",
+          "contentOrigin": "external_source",
+          "source": "project_record"
+        },
+        "activityStatus": "UNKNOWN",
+        "catalogStatus": "QUALIFIED"
+      }
+    ],
+    "candidatesTotal": {
+      "count": 19,
+      "atLeast": false
+    }
+  },
+  "asOf": "2026-10-17T22:58:28.486Z"
+}

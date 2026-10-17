@@ -1,0 +1,24 @@
+{
+  "found": false,
+  "chainId": 4663,
+  "contractAddress": "0xdcfe58b38ee3eb3c1b27856b7353bed7bc9550d8",
+  "scan_url": "https://heyresearch.xyz/scan/0xdcfe58b38ee3eb3c1b27856b7353bed7bc9550d8",
+  "indexed": true,
+  "research_state": "not_researched",
+  "publishedNamesakes": {
+    "total": 1,
+    "items": [
+      {
+        "slug": "chit",
+        "name": "Chit",
+        "symbol": "CHIT",
+        "contractAddress": "0xd523a627030509021cc39b6d7c8543417d3e50d8",
+        "shares": "name_and_ticker",
+        "sharesAddressEnding": true,
+        "url": "https://heyresearch.xyz/project/chit"
+      }
+    ],
+    "line": "Chit is published on HEY on a different contract, 0xd523a627030509021cc39b6d7c8543417d3e50d8. This token, 0xdcfe58b38ee3eb3c1b27856b7353bed7bc9550d8, carries the same name and ticker, $CHIT, and its address ends in the same four characters (50d8). On chain a token is its contract, never its name or ticker."
+  },
+  "disclaimer": "Public, source-backed activity HEY recorded. Still Building means verified activity through a tracked market drawdown — it is not a prediction, not a ranking by price, and not investment advice. Few projects meet Still Building or Under the Radar at any time; both are strict by design, and list responses carry the counts."
+}

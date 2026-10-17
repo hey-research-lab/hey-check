@@ -1,0 +1,720 @@
+{
+  "schema": "hey.agent-intelligence-response",
+  "schemaVersion": "1",
+  "capability": "research_project",
+  "status": "ok",
+  "query": {
+    "chainId": 4663,
+    "q": "loomdesk-hq-mcp"
+  },
+  "chain": {
+    "chainId": 4663,
+    "name": "Robinhood Chain"
+  },
+  "subject": {
+    "kind": "project",
+    "project": {
+      "slug": "loomdesk-hq-mcp",
+      "name": {
+        "text": "mcp",
+        "contentOrigin": "external_source",
+        "source": "project_record"
+      },
+      "url": "https://heyresearch.xyz/project/loomdesk-hq-mcp"
+    },
+    "resolvedFrom": {
+      "q": "loomdesk-hq-mcp"
+    }
+  },
+  "answer": {
+    "text": "mcp last shipped 10 days ago: 1 meaningful event in 30 days; latest ship 10 days ago. loomdesk-hq-mcp: activity status ACTIVE, last meaningful ship 2026-10-07; 1 meaningful event in 30 days. HEY lists 4 things it does not know (1 NOT_MEASURED, 1 NOT_VERIFIED, 2 INSUFFICIENT_EVIDENCE) under unknowns.",
+    "contentOrigin": "derived"
+  },
+  "answerStatus": "DERIVED",
+  "claims": [
+    {
+      "id": "summary.build",
+      "dimension": "build",
+      "statement": {
+        "text": "Active: 1 meaningful event in 30 days; latest ship 10 days ago.",
+        "contentOrigin": "derived"
+      },
+      "status": "DERIVED",
+      "value": null,
+      "source": {
+        "name": "hey",
+        "type": "hey_rule"
+      },
+      "observedAt": "2026-10-07T00:49:59.000Z",
+      "occurredAt": null,
+      "precision": null,
+      "freshness": "weekly",
+      "evidence": [
+        {
+          "id": "ship:c50dd5e6-20fa-4a2f-b49c-76b737075775",
+          "receiptUrl": "https://heyresearch.xyz/api/evidence/ship%3Ac50dd5e6-20fa-4a2f-b49c-76b737075775",
+          "sourceUrl": "https://github.com/loomdesk-hq/mcp"
+        }
+      ],
+      "explainUrl": "https://heyresearch.xyz/api/projects/loomdesk-hq-mcp/timeline",
+      "evidenceKind": "evidence_record"
+    },
+    {
+      "id": "summary.usage",
+      "dimension": "usage",
+      "statement": {
+        "text": "No contract is recorded for this project, so there is no on-chain usage to count.",
+        "contentOrigin": "derived"
+      },
+      "status": "FACT",
+      "value": null,
+      "source": {
+        "name": "decoded contract calls",
+        "type": "chain"
+      },
+      "observedAt": null,
+      "occurredAt": null,
+      "precision": null,
+      "freshness": "unknown",
+      "evidence": [],
+      "explainUrl": "https://heyresearch.xyz/api/projects/loomdesk-hq-mcp/usage",
+      "reason": "no_contract",
+      "contextOnly": true,
+      "evidenceKind": "coverage_state"
+    },
+    {
+      "id": "summary.market",
+      "dimension": "market",
+      "statement": {
+        "text": "No token recorded: this is a project, not a token.",
+        "contentOrigin": "derived"
+      },
+      "status": "FACT",
+      "value": null,
+      "source": {
+        "name": "market readings",
+        "type": "market_provider"
+      },
+      "observedAt": null,
+      "occurredAt": null,
+      "precision": null,
+      "freshness": "unknown",
+      "evidence": [],
+      "explainUrl": "https://heyresearch.xyz/api/projects/loomdesk-hq-mcp/market",
+      "reason": "no_token",
+      "contextOnly": true,
+      "evidenceKind": "registry_record"
+    },
+    {
+      "id": "summary.latestChange",
+      "dimension": "latestChange",
+      "statement": {
+        "text": "3 days ago: HEY reclassified the project — activity status moved from Shipping to Active.",
+        "contentOrigin": "derived"
+      },
+      "status": "DERIVED",
+      "value": null,
+      "source": {
+        "name": "hey",
+        "type": "hey_rule"
+      },
+      "observedAt": "2026-10-14T05:22:14.936Z",
+      "occurredAt": null,
+      "precision": null,
+      "freshness": "weekly",
+      "evidence": [
+        {
+          "id": "state:bb83b158-4f5d-416c-99d3-aaab5737cc1e:activity_status:31325",
+          "receiptUrl": "https://heyresearch.xyz/api/evidence/state%3Abb83b158-4f5d-416c-99d3-aaab5737cc1e%3Aactivity_status%3A31325"
+        }
+      ],
+      "explainUrl": "https://heyresearch.xyz/api/changes?project=loomdesk-hq-mcp",
+      "evidenceKind": "evidence_record"
+    },
+    {
+      "id": "summary.unknown",
+      "dimension": "unknown",
+      "statement": {
+        "text": "3 gaps: Official docs (no source), API description (not enough yet), Official site changes (not enough yet). HEY read its website and found no link to docs.",
+        "contentOrigin": "derived"
+      },
+      "status": "UNKNOWN",
+      "value": null,
+      "source": null,
+      "observedAt": null,
+      "occurredAt": null,
+      "precision": null,
+      "freshness": "unknown",
+      "evidence": [],
+      "explainUrl": "https://heyresearch.xyz/api/projects/loomdesk-hq-mcp/coverage",
+      "reason": "no_docs_link_found",
+      "evidenceKind": "not_held"
+    },
+    {
+      "id": "build.activity_status",
+      "dimension": "build",
+      "statement": {
+        "text": "Activity status ACTIVE under HEY's activity rule (hbm-v31).",
+        "contentOrigin": "derived"
+      },
+      "status": "DERIVED",
+      "value": "ACTIVE",
+      "source": {
+        "name": "hey",
+        "type": "hey_rule"
+      },
+      "observedAt": "2026-10-17T22:58:37.866Z",
+      "occurredAt": null,
+      "precision": null,
+      "freshness": "live",
+      "evidence": [
+        {
+          "id": "ship:c50dd5e6-20fa-4a2f-b49c-76b737075775",
+          "receiptUrl": "https://heyresearch.xyz/api/evidence/ship%3Ac50dd5e6-20fa-4a2f-b49c-76b737075775"
+        }
+      ],
+      "explainUrl": "https://heyresearch.xyz/api/projects/loomdesk-hq-mcp/explain?fact=activity.status",
+      "evidenceKind": "rule_output"
+    },
+    {
+      "id": "build.last_meaningful_ship",
+      "dimension": "build",
+      "statement": {
+        "text": "The newest meaningful ship HEY recorded is dated 2026-10-07.",
+        "contentOrigin": "derived"
+      },
+      "status": "FACT",
+      "value": "2026-10-07T00:49:59.000Z",
+      "source": {
+        "name": "builder sources",
+        "type": "builder_source"
+      },
+      "observedAt": "2026-10-17T22:58:37.866Z",
+      "occurredAt": "2026-10-07T00:49:59.000Z",
+      "precision": null,
+      "freshness": "live",
+      "evidence": [],
+      "explainUrl": "https://heyresearch.xyz/api/projects/loomdesk-hq-mcp/explain?fact=activity.status",
+      "evidenceKind": "canonical_read"
+    },
+    {
+      "id": "build.meaningful_events_30d",
+      "dimension": "build",
+      "statement": {
+        "text": "1 meaningful building event in the last 30 days.",
+        "contentOrigin": "derived"
+      },
+      "status": "DERIVED",
+      "value": 1,
+      "source": {
+        "name": "hey",
+        "type": "hey_rule"
+      },
+      "observedAt": "2026-10-17T22:58:37.866Z",
+      "occurredAt": null,
+      "precision": "WINDOW",
+      "freshness": "live",
+      "evidence": [],
+      "explainUrl": "https://heyresearch.xyz/api/projects/loomdesk-hq-mcp/explain?fact=activity.status",
+      "evidenceKind": "rule_output"
+    },
+    {
+      "id": "build.momentum",
+      "dimension": "build",
+      "statement": {
+        "text": "Build Momentum 22.3 (0–100, from development evidence only; never price).",
+        "contentOrigin": "derived"
+      },
+      "status": "DERIVED",
+      "value": 22.3,
+      "source": {
+        "name": "hey",
+        "type": "hey_rule"
+      },
+      "observedAt": "2026-10-17T22:58:37.866Z",
+      "occurredAt": null,
+      "precision": null,
+      "freshness": "live",
+      "evidence": [
+        {
+          "id": "ship:c50dd5e6-20fa-4a2f-b49c-76b737075775",
+          "receiptUrl": "https://heyresearch.xyz/api/evidence/ship%3Ac50dd5e6-20fa-4a2f-b49c-76b737075775"
+        }
+      ],
+      "explainUrl": "https://heyresearch.xyz/api/projects/loomdesk-hq-mcp/explain?fact=build.momentum",
+      "evidenceKind": "rule_output"
+    },
+    {
+      "id": "build.still_building",
+      "dimension": "build",
+      "statement": {
+        "text": "Still Building is not measured for this project: the project has no tracked token, so there is no market drawdown to measure.",
+        "contentOrigin": "hey"
+      },
+      "status": "UNKNOWN",
+      "value": null,
+      "source": null,
+      "observedAt": "2026-10-17T22:58:37.866Z",
+      "occurredAt": null,
+      "precision": null,
+      "freshness": "live",
+      "evidence": [],
+      "reason": "no_token",
+      "explainUrl": "https://heyresearch.xyz/api/projects/loomdesk-hq-mcp/explain?fact=still_building",
+      "evidenceKind": "not_held"
+    },
+    {
+      "id": "build.under_the_radar",
+      "dimension": "build",
+      "statement": {
+        "text": "Under the Radar is not measured for this project: the project has no tracked token, so there is no market attention to measure.",
+        "contentOrigin": "hey"
+      },
+      "status": "UNKNOWN",
+      "value": null,
+      "source": null,
+      "observedAt": "2026-10-17T22:58:37.866Z",
+      "occurredAt": null,
+      "precision": null,
+      "freshness": "live",
+      "evidence": [],
+      "reason": "no_token",
+      "explainUrl": "https://heyresearch.xyz/api/projects/loomdesk-hq-mcp/explain?fact=discovery_gap",
+      "evidenceKind": "not_held"
+    }
+  ],
+  "unknowns": [
+    {
+      "category": "NOT_VERIFIED",
+      "dimension": "projectOwner",
+      "statement": {
+        "text": "No owner has proved control of this project’s site, repository or contract to HEY.",
+        "contentOrigin": "hey"
+      },
+      "doNotConclude": {
+        "text": "HEY has not verified this link. Do not treat it as the project’s own, and do not treat it as false either.",
+        "contentOrigin": "hey"
+      },
+      "reason": "owner_not_verified"
+    },
+    {
+      "category": "NOT_MEASURED",
+      "dimension": "officialDocs",
+      "statement": {
+        "text": "HEY read its website and found no link to docs.",
+        "contentOrigin": "hey"
+      },
+      "doNotConclude": {
+        "text": "HEY has not measured this. Do not read it as zero, as absent or as negative evidence about the project.",
+        "contentOrigin": "hey"
+      },
+      "coverageState": "NO_SOURCE",
+      "reason": "no_docs_link_found",
+      "asOf": "2026-10-07T01:27:46.073Z",
+      "detailUrl": "https://heyresearch.xyz/api/projects/loomdesk-hq-mcp/coverage"
+    },
+    {
+      "category": "INSUFFICIENT_EVIDENCE",
+      "dimension": "apiDocs",
+      "statement": {
+        "text": "HEY has not read its website’s published files yet.",
+        "contentOrigin": "hey"
+      },
+      "doNotConclude": {
+        "text": "HEY has read too little of this to say. Do not treat a partial figure as the whole, or the gap as a finding.",
+        "contentOrigin": "hey"
+      },
+      "coverageState": "NOT_ENOUGH_YET",
+      "reason": "site_files_not_read_yet",
+      "detailUrl": "https://heyresearch.xyz/api/projects/loomdesk-hq-mcp/coverage"
+    },
+    {
+      "category": "INSUFFICIENT_EVIDENCE",
+      "dimension": "sourceChanges",
+      "statement": {
+        "text": "HEY has no first reading of its website to compare against yet.",
+        "contentOrigin": "hey"
+      },
+      "doNotConclude": {
+        "text": "HEY has read too little of this to say. Do not treat a partial figure as the whole, or the gap as a finding.",
+        "contentOrigin": "hey"
+      },
+      "coverageState": "NOT_ENOUGH_YET",
+      "reason": "no_baseline_yet",
+      "detailUrl": "https://heyresearch.xyz/api/projects/loomdesk-hq-mcp/coverage"
+    }
+  ],
+  "freshness": [
+    {
+      "family": "builder_sources",
+      "observedAt": "2026-10-17T21:54:47.802Z",
+      "dataAsOf": "2026-10-17T21:54:47.802Z",
+      "freshnessStatus": "recent",
+      "staleAfterHours": 72,
+      "refresh": {
+        "job": "REFRESH_GITHUB",
+        "everyMinutes": 60,
+        "slowestMinutes": 4320,
+        "basis": {
+          "text": "Repositories, release feeds and changelogs are re-read by refresh tier (HOT hourly, WARM every 6 hours, COOL daily, COLD every 3 days); the tier follows the activity status and the last meaningful ship. A failing source backs off. A reading is stale after 72 hours, or one and a half cadences of its tier where that is longer (108 hours on COLD).",
+          "contentOrigin": "hey"
+        }
+      },
+      "nextExpectedRefresh": "2026-10-18T03:54:47.802Z"
+    },
+    {
+      "family": "activity_score",
+      "observedAt": "2026-10-17T22:58:37.866Z",
+      "dataAsOf": "2026-10-17T22:58:37.866Z",
+      "freshnessStatus": "live",
+      "staleAfterHours": 24,
+      "refresh": {
+        "job": "RECALCULATE_SCORES",
+        "everyMinutes": 720,
+        "slowestMinutes": 720,
+        "basis": {
+          "text": "A project is due for rescoring once its score is 12 hours old (RESCORE_MIN_INTERVAL_HOURS); a newly recorded ship queues a rescore within the quarter hour. The next refresh is the latest expected time, not a promise: a backlog can delay it.",
+          "contentOrigin": "hey"
+        }
+      },
+      "nextExpectedRefresh": "2026-10-18T10:58:37.866Z"
+    },
+    {
+      "family": "usage",
+      "observedAt": null,
+      "dataAsOf": null,
+      "freshnessStatus": "unknown",
+      "staleAfterHours": 72,
+      "refresh": {
+        "job": "ROLLUP_USAGE_DAYS",
+        "everyMinutes": 360,
+        "slowestMinutes": 360,
+        "basis": {
+          "text": "Product usage is rolled up from decoded calls every 6 hours, per UTC day, for contracts in the method watch.",
+          "contentOrigin": "hey"
+        }
+      },
+      "nextExpectedRefresh": null,
+      "nextExpectedRefreshReason": "never_read"
+    },
+    {
+      "family": "peers",
+      "observedAt": "2026-10-17T02:08:30.445Z",
+      "dataAsOf": "2026-10-17T02:08:30.445Z",
+      "freshnessStatus": "daily",
+      "staleAfterHours": 36,
+      "refresh": {
+        "job": "REFRESH_PEER_CONTEXT",
+        "everyMinutes": 1440,
+        "slowestMinutes": 1440,
+        "basis": {
+          "text": "Peer cohorts are recomputed once a day.",
+          "contentOrigin": "hey"
+        }
+      },
+      "nextExpectedRefresh": "2026-10-18T02:08:30.445Z"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ship:c50dd5e6-20fa-4a2f-b49c-76b737075775",
+      "receiptUrl": "https://heyresearch.xyz/api/evidence/ship%3Ac50dd5e6-20fa-4a2f-b49c-76b737075775",
+      "sourceUrl": "https://github.com/loomdesk-hq/mcp"
+    },
+    {
+      "id": "state:bb83b158-4f5d-416c-99d3-aaab5737cc1e:activity_status:31325",
+      "receiptUrl": "https://heyresearch.xyz/api/evidence/state%3Abb83b158-4f5d-416c-99d3-aaab5737cc1e%3Aactivity_status%3A31325"
+    },
+    {
+      "id": "state:bb83b158-4f5d-416c-99d3-aaab5737cc1e:catalog_status:21524",
+      "receiptUrl": "https://heyresearch.xyz/api/evidence/state%3Abb83b158-4f5d-416c-99d3-aaab5737cc1e%3Acatalog_status%3A21524"
+    },
+    {
+      "id": "narrative:bb83b158-4f5d-416c-99d3-aaab5737cc1e:devtools",
+      "receiptUrl": "https://heyresearch.xyz/api/evidence/narrative%3Abb83b158-4f5d-416c-99d3-aaab5737cc1e%3Adevtools",
+      "sourceUrl": "https://heyresearch.xyz/narrative/devtools"
+    },
+    {
+      "id": "narrative:bb83b158-4f5d-416c-99d3-aaab5737cc1e:ai-agents",
+      "receiptUrl": "https://heyresearch.xyz/api/evidence/narrative%3Abb83b158-4f5d-416c-99d3-aaab5737cc1e%3Aai-agents",
+      "sourceUrl": "https://heyresearch.xyz/narrative/ai-agents"
+    },
+    {
+      "id": "state:bb83b158-4f5d-416c-99d3-aaab5737cc1e:catalog_status:21412",
+      "receiptUrl": "https://heyresearch.xyz/api/evidence/state%3Abb83b158-4f5d-416c-99d3-aaab5737cc1e%3Acatalog_status%3A21412"
+    }
+  ],
+  "data": {
+    "identity": {
+      "slug": "loomdesk-hq-mcp",
+      "name": {
+        "text": "mcp",
+        "contentOrigin": "external_source",
+        "source": "project_record"
+      },
+      "symbol": null,
+      "projectKind": "OTHER",
+      "researchLevel": "VERIFIED_BUILDER",
+      "catalogStatus": "VERIFIED_BUILDER",
+      "narrative": {
+        "slug": "ai-agents",
+        "name": {
+          "text": "AI Agents",
+          "contentOrigin": "derived"
+        }
+      },
+      "firstRecordedByHeyAt": "2026-10-07T01:13:43.817Z",
+      "websiteUrl": "https://loomdesk.trade",
+      "url": "https://heyresearch.xyz/project/loomdesk-hq-mcp"
+    },
+    "builderState": {
+      "activityStatus": "ACTIVE",
+      "activityMeasured": true,
+      "lastMeaningfulShipAt": "2026-10-07T00:49:59.000Z",
+      "meaningfulEvents30d": 1,
+      "buildMomentum": 22.3,
+      "stillBuilding": false,
+      "stillBuildingWithheld": "no_token",
+      "stillBuildingState": "NOT_MEASURED",
+      "underTheRadar": {
+        "state": "NOT_MEASURED",
+        "reason": "no_token"
+      },
+      "discoveryGap": null,
+      "discoveryGapWithheld": "no_token",
+      "scoringVersion": "hbm-v31",
+      "explainUrl": "https://heyresearch.xyz/api/projects/loomdesk-hq-mcp/explain?fact=activity.status"
+    },
+    "latestMeaningfulChange": null,
+    "latestMeaningfulChangeReason": "not_in_recent_changes",
+    "recentChanges": {
+      "available": true,
+      "items": [
+        {
+          "id": "state:bb83b158-4f5d-416c-99d3-aaab5737cc1e:activity_status:31325",
+          "revision": 1,
+          "type": "build.status_changed",
+          "domain": "build",
+          "occurredAt": null,
+          "precision": "OBSERVED",
+          "detectedAt": "2026-10-14T05:22:14.936Z",
+          "recordedAt": "2026-10-14T05:25:04.967Z",
+          "summary": {
+            "text": "Activity status moved from Shipping to Active",
+            "contentOrigin": "derived"
+          },
+          "status": "DERIVED",
+          "countsAsBuilding": false,
+          "project": {
+            "slug": "loomdesk-hq-mcp",
+            "url": "https://heyresearch.xyz/project/loomdesk-hq-mcp"
+          },
+          "evidence": [
+            {
+              "id": "state:bb83b158-4f5d-416c-99d3-aaab5737cc1e:activity_status:31325",
+              "receiptUrl": "https://heyresearch.xyz/api/evidence/state%3Abb83b158-4f5d-416c-99d3-aaab5737cc1e%3Aactivity_status%3A31325"
+            }
+          ],
+          "source": "hey_state"
+        },
+        {
+          "id": "state:bb83b158-4f5d-416c-99d3-aaab5737cc1e:catalog_status:21524",
+          "revision": 1,
+          "type": "research.builder_verified",
+          "domain": "research",
+          "occurredAt": null,
+          "precision": "OBSERVED",
+          "detectedAt": "2026-10-07T02:08:16.696Z",
+          "recordedAt": "2026-10-07T02:10:02.013Z",
+          "summary": {
+            "text": "Research standing moved from Published to Verified builder",
+            "contentOrigin": "derived"
+          },
+          "status": "DERIVED",
+          "countsAsBuilding": false,
+          "project": {
+            "slug": "loomdesk-hq-mcp",
+            "url": "https://heyresearch.xyz/project/loomdesk-hq-mcp"
+          },
+          "evidence": [
+            {
+              "id": "state:bb83b158-4f5d-416c-99d3-aaab5737cc1e:catalog_status:21524",
+              "receiptUrl": "https://heyresearch.xyz/api/evidence/state%3Abb83b158-4f5d-416c-99d3-aaab5737cc1e%3Acatalog_status%3A21524"
+            }
+          ],
+          "source": "hey_state"
+        },
+        {
+          "id": "narrative:bb83b158-4f5d-416c-99d3-aaab5737cc1e:devtools",
+          "revision": 1,
+          "type": "research.narrative_assigned",
+          "domain": "research",
+          "occurredAt": null,
+          "precision": "OBSERVED",
+          "detectedAt": "2026-10-07T02:05:36.670Z",
+          "recordedAt": "2026-10-07T02:08:16.728Z",
+          "summary": {
+            "text": "Narrative: Dev Tools",
+            "contentOrigin": "derived"
+          },
+          "status": "FACT",
+          "countsAsBuilding": false,
+          "project": {
+            "slug": "loomdesk-hq-mcp",
+            "url": "https://heyresearch.xyz/project/loomdesk-hq-mcp"
+          },
+          "evidence": [
+            {
+              "id": "narrative:bb83b158-4f5d-416c-99d3-aaab5737cc1e:devtools",
+              "receiptUrl": "https://heyresearch.xyz/api/evidence/narrative%3Abb83b158-4f5d-416c-99d3-aaab5737cc1e%3Adevtools",
+              "sourceUrl": "https://heyresearch.xyz/narrative/devtools"
+            }
+          ],
+          "source": "hey_rules"
+        },
+        {
+          "id": "narrative:bb83b158-4f5d-416c-99d3-aaab5737cc1e:ai-agents",
+          "revision": 1,
+          "type": "research.narrative_assigned",
+          "domain": "research",
+          "occurredAt": null,
+          "precision": "OBSERVED",
+          "detectedAt": "2026-10-07T02:05:36.670Z",
+          "recordedAt": "2026-10-07T02:08:16.728Z",
+          "summary": {
+            "text": "Primary narrative: AI Agents",
+            "contentOrigin": "derived"
+          },
+          "status": "FACT",
+          "countsAsBuilding": false,
+          "project": {
+            "slug": "loomdesk-hq-mcp",
+            "url": "https://heyresearch.xyz/project/loomdesk-hq-mcp"
+          },
+          "evidence": [
+            {
+              "id": "narrative:bb83b158-4f5d-416c-99d3-aaab5737cc1e:ai-agents",
+              "receiptUrl": "https://heyresearch.xyz/api/evidence/narrative%3Abb83b158-4f5d-416c-99d3-aaab5737cc1e%3Aai-agents",
+              "sourceUrl": "https://heyresearch.xyz/narrative/ai-agents"
+            }
+          ],
+          "source": "hey_rules"
+        },
+        {
+          "id": "state:bb83b158-4f5d-416c-99d3-aaab5737cc1e:catalog_status:21412",
+          "revision": 1,
+          "type": "research.published",
+          "domain": "research",
+          "occurredAt": null,
+          "precision": "OBSERVED",
+          "detectedAt": "2026-10-07T01:18:05.624Z",
+          "recordedAt": "2026-10-07T01:18:12.258Z",
+          "summary": {
+            "text": "Project page published",
+            "contentOrigin": "derived"
+          },
+          "status": "DERIVED",
+          "countsAsBuilding": false,
+          "project": {
+            "slug": "loomdesk-hq-mcp",
+            "url": "https://heyresearch.xyz/project/loomdesk-hq-mcp"
+          },
+          "evidence": [
+            {
+              "id": "state:bb83b158-4f5d-416c-99d3-aaab5737cc1e:catalog_status:21412",
+              "receiptUrl": "https://heyresearch.xyz/api/evidence/state%3Abb83b158-4f5d-416c-99d3-aaab5737cc1e%3Acatalog_status%3A21412"
+            }
+          ],
+          "source": "hey_state"
+        }
+      ],
+      "url": "https://heyresearch.xyz/api/changes?project=loomdesk-hq-mcp"
+    },
+    "contractIdentity": {
+      "token": null,
+      "ownerVerified": false,
+      "contractsUrl": "https://heyresearch.xyz/api/projects/loomdesk-hq-mcp/contracts"
+    },
+    "marketContext": null,
+    "usageContext": {
+      "contextOnly": true,
+      "state": "NOT_APPLICABLE",
+      "reason": "no_contract",
+      "windowDays": 7,
+      "calls": null,
+      "activeContracts": null,
+      "watchedContracts": 0,
+      "observedAt": null,
+      "url": "https://heyresearch.xyz/api/projects/loomdesk-hq-mcp/usage"
+    }
+  },
+  "methodology": {
+    "rules": [
+      {
+        "id": "activity.status",
+        "version": "hbm-v31"
+      },
+      {
+        "id": "research_summary",
+        "version": "summary-v1"
+      },
+      {
+        "id": "peers",
+        "version": "peers-v1"
+      },
+      {
+        "id": "agent_freshness",
+        "version": "agent-freshness-v2"
+      },
+      {
+        "id": "machine_text",
+        "version": "machine-text-v1"
+      }
+    ],
+    "url": "https://heyresearch.xyz/methodology"
+  },
+  "links": {
+    "self": "https://heyresearch.xyz/api/agent/research_project?project=loomdesk-hq-mcp",
+    "page": "https://heyresearch.xyz/project/loomdesk-hq-mcp",
+    "canonical": [
+      "https://heyresearch.xyz/api/projects/loomdesk-hq-mcp/snapshot",
+      "https://heyresearch.xyz/api/projects/loomdesk-hq-mcp/coverage",
+      "https://heyresearch.xyz/api/projects/loomdesk-hq-mcp/explain",
+      "https://heyresearch.xyz/api/changes?project=loomdesk-hq-mcp"
+    ]
+  },
+  "citation": {
+    "kind": "hey_agent_answer",
+    "capability": "research_project",
+    "schemaVersion": "1",
+    "url": "https://heyresearch.xyz/api/agent/research_project?project=loomdesk-hq-mcp",
+    "asOf": "2026-10-17T22:58:58.730Z",
+    "project": "loomdesk-hq-mcp",
+    "scoringVersion": "hbm-v31",
+    "text": "Source: HEY Research Lab, builder research for Robinhood Chain — https://heyresearch.xyz/project/loomdesk-hq-mcp, as of 2026-10-17, rules hbm-v31"
+  },
+  "boundaries": {
+    "notAdvice": true,
+    "notProvided": [
+      "investment_recommendation",
+      "buy_or_sell_signal",
+      "price_prediction",
+      "price_target",
+      "position_size",
+      "leverage",
+      "stop_loss",
+      "ranking_by_expected_return",
+      "risk_score",
+      "safety_verdict",
+      "smart_money_label",
+      "wallet_pnl",
+      "wallet_profile"
+    ],
+    "marketIsContextOnly": true,
+    "disclaimer": {
+      "text": "Public, source-backed activity HEY recorded. Still Building means verified activity through a tracked market drawdown — it is not a prediction, not a ranking by price, and not investment advice. Few projects meet Still Building or Under the Radar at any time; both are strict by design, and list responses carry the counts.",
+      "contentOrigin": "hey"
+    }
+  },
+  "asOf": "2026-10-17T22:58:58.730Z"
+}
