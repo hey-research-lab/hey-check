@@ -1,0 +1,74 @@
+{
+  "name": "@hey-research-lab/check",
+  "version": "0.1.0",
+  "description": "A dev check for any Robinhood Chain token or project: is anyone building it and what did they ship, from HEY Research Lab's public record, printed in the terminal and drawn as a shareable card.",
+  "license": "MIT",
+  "author": "HEY Research Lab",
+  "type": "module",
+  "homepage": "https://heyresearch.xyz/developers",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hey-research-lab/hey-check.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hey-research-lab/hey-check/issues"
+  },
+  "keywords": [
+    "hey-research",
+    "robinhood-chain",
+    "cli",
+    "dev-check",
+    "builders",
+    "ships",
+    "developer-tools"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "bin": {
+    "hey-check": "dist/cli.js"
+  },
+  "exports": {
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "assets",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "packageManager": "pnpm@9.15.1",
+  "scripts": {
+    "build": "tsup",
+    "lint": "eslint .",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "scan": "node scripts/scan.mjs .",
+    "format:check": "prettier --check .",
+    "format": "prettier --write .",
+    "card:examples": "tsup --config tsup.examples.config.ts && node node_modules/.cache/hey-check/card-examples.js"
+  },
+  "dependencies": {
+    "@resvg/resvg-js": "2.6.2"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.17.0",
+    "@types/node": "^22.10.0",
+    "eslint": "^9.17.0",
+    "eslint-config-prettier": "^9.1.0",
+    "prettier": "^3.4.2",
+    "tsup": "^8.5.1",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.18.0",
+    "vitest": "^4.1.11"
+  },
+  "pnpm": {
+    "overrides": {
+      "esbuild": "^0.28.1"
+    }
+  }
+}
