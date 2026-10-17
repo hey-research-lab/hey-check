@@ -1,0 +1,5 @@
+# The README and CHANGELOG give install steps for the hey-check Agent Skill and must name the
+# coding agent that reads ~/.claude/skills/ ("Claude Code"), as hey-agent-skills does. Only the
+# bare product-name rule is accepted; every other attribution rule (trailers, "generated" credits,
+# the emoji, the company name) stays an error everywhere.
+(\bC[l]aude\b)
