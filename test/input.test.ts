@@ -99,6 +99,33 @@ describe('parseInput', () => {
     expect(parseInput('Ёлка')).toMatchObject({ kind: 'name' });
   });
 
+  it('says why when a shell ate the $TICKER or passed its quotes on', () => {
+    const messageOf = (raw: string | undefined): string => {
+      try {
+        parseInput(raw);
+      } catch (error) {
+        return (error as CheckError).message;
+      }
+      throw new Error(`expected ${String(raw)} to be refused`);
+    };
+    // `hey-check "$CHIT"` in bash or zsh: the shell expands $CHIT to an empty argument.
+    expect(codeOf('')).toBe('missing_argument');
+    expect(messageOf('')).toContain("quoted with single quotes in a shell ('$CHIT')");
+    // `hey-check '$CHIT'` in cmd.exe: the single quotes arrive as part of the input.
+    for (const raw of [
+      "'$CHIT'",
+      '"$CHIT"',
+      '\u2018$CHIT\u2019',
+      "'0xd523a627030509021cc39b6d7c8543417d3e50d8'",
+    ]) {
+      expect(codeOf(raw), raw).toBe('invalid_input');
+      expect(messageOf(raw), raw).toContain('arrived with its quotes');
+    }
+    expect(messageOf("'$CHIT'")).toContain('hey-check $CHIT');
+    // An apostrophe inside a name is still a name.
+    expect(parseInput("Chit's")).toMatchObject({ kind: 'name', q: "Chit's" });
+  });
+
   it('refuses junk before any request', () => {
     expect(codeOf(undefined)).toBe('missing_argument');
     expect(codeOf('   ')).toBe('missing_argument');

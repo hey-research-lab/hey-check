@@ -46,6 +46,16 @@ const X_HOSTS = new Set([
 const HELP =
   'hey-check takes a Robinhood Chain contract address (0x + 40 hex), a $TICKER, a project name or slug, an @handle, or an x.com profile URL.';
 
+/** An empty argument is what a shell leaves of an unquoted or double-quoted `$CHIT`. */
+const EMPTY_HINT =
+  "A $TICKER must be quoted with single quotes in a shell ('$CHIT'): unquoted or in double quotes, the shell replaces it with nothing.";
+
+/**
+ * Quotes that reached hey-check as part of the input: cmd.exe, for one, passes single quotes
+ * through. The input is still refused (exit 2); the message says why.
+ */
+const WRAPPED_IN_QUOTES = /^(['"\u2018\u2019\u201C\u201D]).+(['"\u2018\u2019\u201C\u201D])$/u;
+
 function handleFromXUrl(raw: string): string {
   const withScheme = /^https?:\/\//i.test(raw) ? raw : `https://${raw}`;
   let url: URL;
@@ -74,9 +84,15 @@ export function parseInput(value: string | undefined): CheckInput {
     throw usageError('invalid_input', 'The input carries control or invisible characters.');
   }
   const raw = value.trim();
-  if (raw === '') throw usageError('missing_argument', `Nothing to check. ${HELP}`);
+  if (raw === '') throw usageError('missing_argument', `Nothing to check. ${EMPTY_HINT}`);
   if (raw.length > MAX_INPUT_LENGTH) {
     throw usageError('invalid_input', `The input is longer than ${MAX_INPUT_LENGTH} characters.`);
+  }
+  if (WRAPPED_IN_QUOTES.test(raw)) {
+    throw usageError(
+      'invalid_input',
+      `The input arrived with its quotes (${raw}). Your shell passed them on as part of it — cmd.exe does — so leave them out there: hey-check ${raw.slice(1, -1)}`,
+    );
   }
 
   // CAIP-10 on Robinhood Chain: eip155:4663:0x…

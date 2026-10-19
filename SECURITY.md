@@ -2,8 +2,9 @@
 
 ## Reporting a vulnerability
 
-Please report privately through GitHub's "Report a vulnerability" (Security → Advisories) on this
-repository, or email hi@heyresearch.xyz with "security" in the subject. Do not open a public issue.
+Please email hi@heyresearch.xyz with "security" in the subject (the contact published at
+<https://heyresearch.xyz/.well-known/security.txt>). If this repository's Security tab offers
+"Report a vulnerability", you can report there privately instead. Do not open a public issue.
 We aim to acknowledge within 3 working days. There is no bug bounty for this repository.
 
 ## Scope

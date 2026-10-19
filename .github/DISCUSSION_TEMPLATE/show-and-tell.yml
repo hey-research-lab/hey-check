@@ -1,0 +1,20 @@
+# Used by the "Show and tell" category once Discussions are enabled on this repository.
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Show a script, a workflow, an agent setup or a card you made with `hey-check`.
+        Please do not post price predictions, buy or sell calls, or promotion of a token.
+  - type: textarea
+    id: what
+    attributes:
+      label: What you built
+      description: What it does and who it is for.
+    validations:
+      required: true
+  - type: textarea
+    id: how
+    attributes:
+      label: How it uses hey-check
+      description: The commands or code, or a link to them.
+      render: sh

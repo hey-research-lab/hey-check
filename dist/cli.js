@@ -2,9 +2,9 @@
 
 // src/card/render.ts
 import { existsSync } from "fs";
+import { createRequire } from "module";
 import { dirname, join } from "path";
 import { fileURLToPath } from "url";
-import { Resvg } from "@resvg/resvg-js";
 
 // src/card/svg.ts
 var CARD_WIDTH = 1200;
@@ -300,6 +300,20 @@ function defaultFontDir() {
   }
   throw new Error("The card font (assets/fonts/Geist-*.ttf) is missing from this install.");
 }
+var resvgModule;
+function loadResvg(load = createRequire(import.meta.url)) {
+  if (resvgModule) return resvgModule;
+  try {
+    resvgModule = load("@resvg/resvg-js");
+  } catch (error) {
+    const reason = error instanceof Error ? error.message.split("\n")[0] ?? "" : String(error);
+    throw new Error(
+      `the card renderer (@resvg/resvg-js) could not load on ${process.platform}-${process.arch}; run with --no-card for the text answer (${reason})`,
+      { cause: error }
+    );
+  }
+  return resvgModule;
+}
 function loadFonts(fontDir = defaultFontDir()) {
   const files = FONT_FILES.map((f) => join(fontDir, f));
   for (const file of files) {
@@ -328,6 +342,7 @@ function createMeasure(fonts) {
     const hit = cache.get(key);
     if (hit !== void 0) return hit;
     const svg = (t) => `<svg xmlns="http://www.w3.org/2000/svg" width="8000" height="400"><text x="0" y="300" font-family="${CARD_FONT_FAMILY}" font-size="${size}" font-weight="${weight}" letter-spacing="${letterSpacing}" xml:space="preserve">${escapeForMeasure(t)}</text></svg>`;
+    const { Resvg } = loadResvg();
     const width = (t) => new Resvg(svg(t), options(fonts)).getBBox()?.width ?? 0;
     const bars = width("||");
     const value = text2 === "" ? 0 : Math.max(0, width(`|${text2}|`) - bars);
@@ -336,6 +351,7 @@ function createMeasure(fonts) {
   };
 }
 function renderPng(svg, fonts) {
+  const { Resvg } = loadResvg();
   return new Resvg(svg, options(fonts)).render().asPng();
 }
 
@@ -581,6 +597,8 @@ var X_HOSTS = /* @__PURE__ */ new Set([
   "mobile.twitter.com"
 ]);
 var HELP = "hey-check takes a Robinhood Chain contract address (0x + 40 hex), a $TICKER, a project name or slug, an @handle, or an x.com profile URL.";
+var EMPTY_HINT = "A $TICKER must be quoted with single quotes in a shell ('$CHIT'): unquoted or in double quotes, the shell replaces it with nothing.";
+var WRAPPED_IN_QUOTES = /^(['"\u2018\u2019\u201C\u201D]).+(['"\u2018\u2019\u201C\u201D])$/u;
 function handleFromXUrl(raw) {
   const withScheme = /^https?:\/\//i.test(raw) ? raw : `https://${raw}`;
   let url;
@@ -607,9 +625,15 @@ function parseInput(value) {
     throw usageError("invalid_input", "The input carries control or invisible characters.");
   }
   const raw = value.trim();
-  if (raw === "") throw usageError("missing_argument", `Nothing to check. ${HELP}`);
+  if (raw === "") throw usageError("missing_argument", `Nothing to check. ${EMPTY_HINT}`);
   if (raw.length > MAX_INPUT_LENGTH) {
     throw usageError("invalid_input", `The input is longer than ${MAX_INPUT_LENGTH} characters.`);
+  }
+  if (WRAPPED_IN_QUOTES.test(raw)) {
+    throw usageError(
+      "invalid_input",
+      `The input arrived with its quotes (${raw}). Your shell passed them on as part of it \u2014 cmd.exe does \u2014 so leave them out there: hey-check ${raw.slice(1, -1)}`
+    );
   }
   const caip = /^eip155:(\d+):(.+)$/i.exec(raw);
   if (caip) {
@@ -1421,7 +1445,7 @@ Usage
 
 Input
   0x\u2026                    a token or contract address (0x + 40 hex)
-  $TICKER                a ticker, e.g. $CHIT
+  $TICKER                a ticker, e.g. $CHIT (in a shell, quote it: '$CHIT')
   name or slug           a project name, e.g. loom
   @handle                an X handle
   https://x.com/<handle> an X profile URL

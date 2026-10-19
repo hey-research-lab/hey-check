@@ -1,8 +1,9 @@
 import { existsSync } from 'node:fs';
+import { createRequire } from 'node:module';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { Resvg, type ResvgRenderOptions } from '@resvg/resvg-js';
+import type * as resvg from '@resvg/resvg-js';
 
 import { CARD_FONT_FAMILY, type Measure } from './svg.js';
 
@@ -23,6 +24,32 @@ export function defaultFontDir(): string {
   throw new Error('The card font (assets/fonts/Geist-*.ttf) is missing from this install.');
 }
 
+type ResvgModule = typeof resvg;
+
+let resvgModule: ResvgModule | undefined;
+
+/**
+ * The rasteriser is a native module with prebuilt binaries for the common platforms only. It is
+ * loaded on first use, never at start-up, so `--no-card`, `--json --no-card` and `--quiet --no-card`
+ * still answer on a platform it has no build for; drawing a card there fails as
+ * `card_not_written` (exit 1) after the answer, with a message that names the way out.
+ */
+export function loadResvg(
+  load: (id: string) => unknown = createRequire(import.meta.url),
+): ResvgModule {
+  if (resvgModule) return resvgModule;
+  try {
+    resvgModule = load('@resvg/resvg-js') as ResvgModule;
+  } catch (error) {
+    const reason = error instanceof Error ? (error.message.split('\n')[0] ?? '') : String(error);
+    throw new Error(
+      `the card renderer (@resvg/resvg-js) could not load on ${process.platform}-${process.arch}; run with --no-card for the text answer (${reason})`,
+      { cause: error },
+    );
+  }
+  return resvgModule;
+}
+
 export type Fonts = { files: string[] };
 
 export function loadFonts(fontDir: string = defaultFontDir()): Fonts {
@@ -34,7 +61,7 @@ export function loadFonts(fontDir: string = defaultFontDir()): Fonts {
 }
 
 /** Only the bundled font, never a system font: the card renders the same on every machine. */
-function options(fonts: Fonts): ResvgRenderOptions {
+function options(fonts: Fonts): resvg.ResvgRenderOptions {
   return {
     font: {
       fontFiles: fonts.files,
@@ -62,6 +89,7 @@ export function createMeasure(fonts: Fonts): Measure {
     // measured once and taken off.
     const svg = (t: string) =>
       `<svg xmlns="http://www.w3.org/2000/svg" width="8000" height="400"><text x="0" y="300" font-family="${CARD_FONT_FAMILY}" font-size="${size}" font-weight="${weight}" letter-spacing="${letterSpacing}" xml:space="preserve">${escapeForMeasure(t)}</text></svg>`;
+    const { Resvg } = loadResvg();
     const width = (t: string) => new Resvg(svg(t), options(fonts)).getBBox()?.width ?? 0;
     const bars = width('||');
     const value = text === '' ? 0 : Math.max(0, width(`|${text}|`) - bars);
@@ -71,5 +99,6 @@ export function createMeasure(fonts: Fonts): Measure {
 }
 
 export function renderPng(svg: string, fonts: Fonts): Buffer {
+  const { Resvg } = loadResvg();
   return new Resvg(svg, options(fonts)).render().asPng();
 }
