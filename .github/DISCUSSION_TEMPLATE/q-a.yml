@@ -1,0 +1,28 @@
+# Used by the "Q&A" category once Discussions are enabled on this repository.
+labels: ['question']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Ask how to run `hey-check`, read its answer or use it in a script or an agent.
+        Many answers are already in [docs/TROUBLESHOOTING.md](https://github.com/hey-research-lab/hey-check/blob/main/docs/TROUBLESHOOTING.md).
+        A bug with steps to reproduce belongs in an issue; a security problem is reported privately (see SECURITY.md).
+  - type: textarea
+    id: question
+    attributes:
+      label: Your question
+      description: What are you trying to do, and what happened instead?
+    validations:
+      required: true
+  - type: textarea
+    id: command
+    attributes:
+      label: Command and output
+      description: The command you ran, its exit code (`echo $?`), and the `--json --no-card` output if it helps. The output holds no secret; hey-check sends no key.
+      render: text
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: OS, shell and `node --version`.
+      placeholder: macOS 15, zsh, v22.20.0

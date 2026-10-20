@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Troubleshooting and questions
+    url: https://github.com/hey-research-lab/hey-check/blob/main/docs/TROUBLESHOOTING.md
+    about: Shell quoting, npx and git, the card renderer, exit codes and rate limits.
+  - name: Report a security problem privately
+    url: https://github.com/hey-research-lab/hey-check/blob/main/SECURITY.md
+    about: Please do not open a public issue for a vulnerability.

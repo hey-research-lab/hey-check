@@ -12,13 +12,18 @@ jobs:
   verify:
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        # The engines floor and the current LTS.
+        node: [22, 24]
     steps:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
       - uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: ${{ matrix.node }}
       - run: corepack enable
       - run: pnpm install --frozen-lockfile
       - run: pnpm scan
@@ -26,3 +31,7 @@ jobs:
       - run: pnpm typecheck
       - run: pnpm test
       - run: pnpm build
+      - name: dist/ matches the source
+        # dist/cli.js is committed so `npx github:hey-research-lab/hey-check` runs without a build;
+        # a source change without its rebuilt dist/ would reach those readers stale.
+        run: git diff --exit-code -- dist

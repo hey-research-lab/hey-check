@@ -1,0 +1,45 @@
+name: Bug report
+description: hey-check did something wrong or unexpected.
+labels: ['bug']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting. Please check [docs/TROUBLESHOOTING.md](https://github.com/hey-research-lab/hey-check/blob/main/docs/TROUBLESHOOTING.md) first: shell quoting, git for `npx github:` and the card renderer cover most problems.
+        A security problem is reported privately instead; see [SECURITY.md](https://github.com/hey-research-lab/hey-check/blob/main/SECURITY.md).
+        A disagreement with HEY's record of a project (its status, a ship, a contract) is about Hey Research Lab's data, not this tool: use the project's page at heyresearch.xyz.
+  - type: input
+    id: command
+    attributes:
+      label: Command
+      description: Exactly what you ran.
+      placeholder: hey-check '$CHIT' --no-card
+    validations:
+      required: true
+  - type: input
+    id: exit-code
+    attributes:
+      label: Exit code
+      description: '`echo $?` right after the command (PowerShell: `$LASTEXITCODE`).'
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected, and what happened
+    validations:
+      required: true
+  - type: textarea
+    id: output
+    attributes:
+      label: Output
+      description: The terminal output, or the same command with `--json --no-card`. It holds no secret; hey-check sends no key.
+      render: text
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: OS and architecture, shell, `node --version`, and how you ran it (npx github:, a clone, npm).
+      placeholder: Ubuntu 24.04 x64, bash, v22.20.0, npx github:hey-research-lab/hey-check
+    validations:
+      required: true

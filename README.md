@@ -44,8 +44,16 @@ npx @hey-research-lab/check '$CHIT'
 npm install --global @hey-research-lab/check   # installs the `hey-check` command
 ```
 
-Node.js 22 or later. No API key, no account. Quote a `$TICKER` in your shell (`'$CHIT'`) so the
-shell does not expand it.
+Node.js 22 or later (CI runs the tests on 22 and 24). No API key, no account.
+
+- **Quote a `$TICKER`** in single quotes (`'$CHIT'`) in bash, zsh, fish and PowerShell, or the
+  shell replaces it with an empty variable. In cmd.exe, leave the quotes out: `hey-check $CHIT`.
+- **`npx github:` needs git** on your `PATH`: npm fetches the package with it.
+- **The card** is drawn by [`@resvg/resvg-js`](https://github.com/thx/resvg-js), which has
+  prebuilt binaries for macOS, Windows, Linux (glibc and musl) and Android on the common
+  architectures. Where it has none, `--no-card` still prints the answer.
+
+Something not working? See [docs/TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md).
 
 ## Smallest working example
 
@@ -88,6 +96,25 @@ hey-check '$CHIT' --tweet                                  # a ready-to-post tex
 hey-check '$CHIT' --json --no-card | jq .builder           # for scripts and agents
 hey-check '$CHIT' --out ~/Desktop/chit.png                 # choose where the card goes
 ```
+
+### Check a list
+
+[`examples/check-many.sh`](examples/check-many.sh) runs `hey-check --json --no-card` over a file
+with one input per line, one second apart, and prints a tab-separated table (it needs `jq`):
+
+```sh
+examples/check-many.sh examples/inputs.txt
+```
+
+```text
+input	outcome	status	last_ship	page
+$CHIT	answered	Shipping	2026-10-14	https://heyresearch.xyz/project/chit
+0xdcfe58b38ee3eb3c1b27856b7353bed7bc9550d8	not_found	not a published project on HEY		https://heyresearch.xyz/scan/0xdcfe58b38ee3eb3c1b27856b7353bed7bc9550d8
+loom	answered	Shipping	2026-10-15	https://heyresearch.xyz/project/loom
+pepe	ambiguous	20+ matches; pass a slug or the contract
+```
+
+That was HEY's answer on 2026-10-19 (UTC); the record moves as projects ship.
 
 ### A token that shares a published project's name
 
@@ -259,7 +286,7 @@ valuation, liquidity or volume field exists in it. A value HEY did not send is `
 | `latestShip`                    | HEY's latest meaningful change with its evidence id, source URL and receipt; `null` when HEY's answer carries none.                                                                                                                         |
 | `contract.verification`         | `VERIFIED`, `UNVERIFIED` or `MISMATCH`, as HEY says it; `contract` is `null` when HEY records no token for the project.                                                                                                                     |
 | `unknowns`                      | Every gap HEY lists (deduplicated), with HEY's category (`NOT_MEASURED`, `NOT_VERIFIED`, `STALE`, `INSUFFICIENT_EVIDENCE`, `UNKNOWN`).                                                                                                      |
-| `candidates`, `candidatesTotal` | For `ambiguous`: the projects HEY listed, and how many matched in all.                                                                                                                                                                      |
+| `candidates`, `candidatesTotal` | For `ambiguous`: the projects HEY listed, and how many matched in all as `{ count, atLeast }` (`atLeast: true`: at least `count` matched).                                                                                                  |
 | `notFound`                      | For `not_found`: HEY's message, the contract, the scan page, and `namesakes` (published projects with the same name or ticker on another contract). `namesakesRead: false` means the scan card could not be read — not that there are none. |
 | `card`                          | `{ "path" }` when a card was written, else `null`.                                                                                                                                                                                          |
 | `tweet`                         | The post text with `--tweet`, else `null`.                                                                                                                                                                                                  |
@@ -271,7 +298,7 @@ valuation, liquidity or volume field exists in it. A value HEY did not send is `
 | Code | Meaning                                                                                                                                                                    |
 | ---- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 0    | Answered: HEY holds a published project for the input.                                                                                                                     |
-| 1    | Answered, but the card could not be written (path, symlink, permissions).                                                                                                  |
+| 1    | Answered, but the card could not be written (path, symlink, permissions, or no card renderer for this platform: use `--no-card`).                                          |
 | 2    | Usage error: input that is not an address, `$TICKER`, name, `@handle` or x.com profile URL, the zero or burn address, a bad flag, `unsupported_chain`. No request is made. |
 | 3    | HEY refused the request (an `invalid_request` other than `ambiguous`).                                                                                                     |
 | 4    | Not published: HEY holds no published project for the input. That is a statement about HEY's index, not about the token.                                                   |
@@ -328,6 +355,19 @@ verification and every unknown are HEY's, decided by HEY's private quality gate 
 their source. Public API docs: <https://heyresearch.xyz/docs/public-api>. The same answers are
 served to agents by the hosted MCP server, <https://heyresearch.xyz/mcp>. For every other read
 (ships, changes, evidence, unknowns), use [`@hey-research-lab/cli`](https://github.com/hey-research-lab/hey-cli).
+
+Other open tools from Hey Research Lab:
+
+- [`hey-cli`](https://github.com/hey-research-lab/hey-cli): every public read (projects, ships,
+  changes, evidence, unknowns) from the terminal, with JSON output.
+- [`chainprint`](https://github.com/hey-research-lab/chainprint): an offline scan of a source tree
+  for evidence that the code targets Robinhood Chain.
+- [`rhchain-registry`](https://github.com/hey-research-lab/rhchain-registry): Robinhood Chain
+  infrastructure (factories, DEXes, launchpads and more), each entry citing its public sources.
+- [`hey-data`](https://github.com/hey-research-lab/hey-data): NDJSON snapshots of HEY's public
+  builder records.
+- [`awesome-robinhood-chain`](https://github.com/hey-research-lab/awesome-robinhood-chain): projects
+  building on Robinhood Chain, each with public evidence that it ships.
 
 ## What it does NOT prove
 

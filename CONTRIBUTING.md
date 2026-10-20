@@ -4,6 +4,18 @@ Thank you for helping. `hey-check` answers one question — is anyone building t
 token or project, and what did they ship — from HEY Research Lab's public record. Changes that
 keep it that small are welcome.
 
+## Where to start
+
+- **A question or an idea:** if Discussions are open on this repository, start there (Q&A or
+  Ideas); otherwise open an issue. Check [docs/TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md) first.
+- **A bug:** the issue form asks for the command, the exit code, the `--json --no-card` output and
+  your OS, shell and Node.js version — what it takes to reproduce it.
+- **Something to work on:** issues labelled
+  [`good first issue`](https://github.com/hey-research-lab/hey-check/labels/good%20first%20issue)
+  or [`help wanted`](https://github.com/hey-research-lab/hey-check/labels/help%20wanted). Say in
+  the issue that you are taking it, so two people do not do the same work.
+- **A security problem:** never in public; see [SECURITY.md](SECURITY.md).
+
 ## Setup
 
 ```sh
@@ -18,7 +30,11 @@ pnpm card:examples   # redraws docs/example-*.png from the fixtures
 ```
 
 Node.js 22+, pnpm 9.15.1. Commit `dist/` and `docs/example-*.png` together with the source change
-that moved them.
+that moved them: CI rebuilds `dist/` and fails when it differs from what is committed, because
+`npx github:hey-research-lab/hey-check` runs the committed bundle. CI runs on Node.js 22 and 24.
+
+To try a change against the live API, run the built CLI: `node dist/cli.js '$CHIT' --no-card`, or
+`HEY_CHECK="node dist/cli.js" examples/check-many.sh examples/inputs.txt` for a few at once.
 
 ## Rules
 

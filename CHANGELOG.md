@@ -4,6 +4,33 @@ All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project uses
 [Semantic Versioning](https://semver.org/).
 
+## Unreleased
+
+### Fixed
+
+- `--no-card` (and `--json --no-card`, `--quiet --no-card`) answers on a platform the card
+  renderer has no prebuilt binary for. `@resvg/resvg-js` is loaded when a card is drawn, not at
+  start-up; before, a missing binary crashed every run with a stack trace. Drawing a card there
+  now fails as `card_not_written` (exit 1) after the answer, and the message says to use
+  `--no-card`.
+- An empty input (what bash and zsh leave of an unquoted or double-quoted `$CHIT`) says to quote
+  the ticker in single quotes, and an input that arrives wrapped in quotes (cmd.exe passes them
+  on) says to leave them out. Both still exit 2; nothing new is accepted.
+
+### Added
+
+- `examples/check-many.sh`: run `hey-check --json --no-card` over a list of inputs and print a
+  tab-separated table.
+- `docs/TROUBLESHOOTING.md`, an issue form for bugs, and Discussion category forms (Q&A, Ideas,
+  Show and tell) that take effect if Discussions are enabled.
+- CI runs on Node.js 22 and 24 and fails when the committed `dist/` differs from a fresh build.
+
+### Changed
+
+- README: install notes (single quotes for a ticker, cmd.exe, git for `npx github:`, the card
+  renderer's platforms), the `candidatesTotal` shape (`{ count, atLeast }`), and links to Hey
+  Research Lab's other open tools. SECURITY.md leads with the e-mail contact.
+
 ## 0.1.0 — 2026-10-18
 
 ### Added

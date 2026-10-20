@@ -1,0 +1,6 @@
+# One input per line: a 0x contract, a $TICKER, a project name or slug, or an @handle.
+# Lines starting with # and blank lines are skipped.
+$CHIT
+0xdcfe58b38ee3eb3c1b27856b7353bed7bc9550d8
+loom
+pepe

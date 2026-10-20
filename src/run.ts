@@ -53,7 +53,7 @@ Usage
 
 Input
   0x…                    a token or contract address (0x + 40 hex)
-  $TICKER                a ticker, e.g. $CHIT
+  $TICKER                a ticker, e.g. $CHIT (in a shell, quote it: '$CHIT')
   name or slug           a project name, e.g. loom
   @handle                an X handle
   https://x.com/<handle> an X profile URL
