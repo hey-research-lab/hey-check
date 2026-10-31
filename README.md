@@ -34,14 +34,14 @@ is no network, chain or RPC option. A CAIP-10 address on another chain (`eip155:
 No install needed:
 
 ```sh
-npx github:hey-research-lab/hey-check '$CHIT'
+npx @hey-research-lab/check '$CHIT'
+npm install --global @hey-research-lab/check   # or install the `hey-check` command
 ```
 
-Once it is published to npm:
+Or straight from this repository:
 
 ```sh
-npx @hey-research-lab/check '$CHIT'
-npm install --global @hey-research-lab/check   # installs the `hey-check` command
+npx github:hey-research-lab/hey-check '$CHIT'
 ```
 
 Node.js 22 or later (CI runs the tests on 22 and 24). No API key, no account.
