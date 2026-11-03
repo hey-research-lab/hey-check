@@ -1,6 +1,6 @@
 {
   "name": "@hey-research-lab/check",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A dev check for any Robinhood Chain token or project: is anyone building it and what did they ship, from HEY Research Lab's public record, printed in the terminal and drawn as a shareable card.",
   "license": "MIT",
   "author": "HEY Research Lab",
@@ -64,7 +64,7 @@
     "tsup": "^8.5.1",
     "typescript": "^5.7.2",
     "typescript-eslint": "^8.18.0",
-    "vitest": "^4.1.11"
+    "vitest": "^4.1.12"
   },
   "pnpm": {
     "overrides": {

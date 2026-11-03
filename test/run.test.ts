@@ -47,7 +47,7 @@ describe('answered (status ok)', () => {
     expect(out.stdout).toContain('https://github.com/example-builder/chit-app');
     expect(out.stdout).toMatch(/Last 30 days\s+4 meaningful events\n/);
     expect(out.stdout).toContain(
-      '0xd523a627030509021cc39b6d7c8543417d3e50d8 · token verified (VERIFIED)',
+      '0xd523a627030509021cc39b6d7c8543417d3e50d8 · Project names this contract',
     );
     expect(out.stdout).toContain('NOT_MEASURED — HEY read its website and found no link to docs.');
     expect(out.stdout).toContain('Source: HEY Research Lab, builder research for Robinhood Chain');

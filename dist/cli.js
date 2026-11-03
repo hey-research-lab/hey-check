@@ -406,7 +406,7 @@ var ZERO_ADDRESS = "0x0000000000000000000000000000000000000000";
 var DEAD_ADDRESS = "0x000000000000000000000000000000000000dead";
 
 // src/version.ts
-var CHECK_VERSION = true ? "0.1.0" : "0.0.0-dev";
+var CHECK_VERSION = true ? "0.1.1" : "0.0.0-dev";
 
 // src/http.ts
 var DEFAULT_BASE_URL = "https://heyresearch.xyz";
@@ -988,13 +988,13 @@ function eventsLine(n) {
 function verificationWords(v) {
   switch (v) {
     case "VERIFIED":
-      return "token verified";
+      return "Project names this contract";
     case "UNVERIFIED":
-      return "token not verified";
+      return "Not named by the project";
     case "MISMATCH":
-      return "token mismatch: the project's own site names another contract";
+      return "Project names another contract";
     default:
-      return "token verification unknown";
+      return "token check unknown";
   }
 }
 function sharesPhrase(shares) {
@@ -1258,9 +1258,7 @@ function answered(r, ctx) {
   );
   if (r.contract) {
     const v = r.contract.verification;
-    lines.push(
-      row(s, "Contract", `${r.contract.address} \xB7 ${verificationWords(v)}${v ? ` (${v})` : ""}`)
-    );
+    lines.push(row(s, "Contract", `${r.contract.address} \xB7 ${verificationWords(v)}`));
   } else {
     lines.push(row(s, "Contract", "no token on HEY\u2019s record for this project"));
   }

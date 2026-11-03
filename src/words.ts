@@ -58,16 +58,20 @@ export function eventsLine(n: number | null): string {
   return `${n} meaningful event${n === 1 ? '' : 's'} in 30 days`;
 }
 
+/**
+ * The token check in HEY's own words (founder ruling R2, 2026-10-28; the words of
+ * `@hey-research-lab/agent-contract`'s vocabulary): a reader meets "verified" only in "Verified Builder".
+ */
 export function verificationWords(v: string | null): string {
   switch (v) {
     case 'VERIFIED':
-      return 'token verified';
+      return 'Project names this contract';
     case 'UNVERIFIED':
-      return 'token not verified';
+      return 'Not named by the project';
     case 'MISMATCH':
-      return "token mismatch: the project's own site names another contract";
+      return 'Project names another contract';
     default:
-      return 'token verification unknown';
+      return 'token check unknown';
   }
 }
 

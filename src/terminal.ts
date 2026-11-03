@@ -53,9 +53,7 @@ function answered(r: Answered, ctx: TerminalContext): string[] {
 
   if (r.contract) {
     const v = r.contract.verification;
-    lines.push(
-      row(s, 'Contract', `${r.contract.address} · ${verificationWords(v)}${v ? ` (${v})` : ''}`),
-    );
+    lines.push(row(s, 'Contract', `${r.contract.address} · ${verificationWords(v)}`));
   } else {
     lines.push(row(s, 'Contract', 'no token on HEY’s record for this project'));
   }

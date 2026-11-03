@@ -69,7 +69,7 @@ Chit is shipping consistently: 4 meaningful events in 30 days; latest ship 3 day
   Last ship     3 days ago (2026-10-14) — Code changes, week starting 2026-10-12 (to 2026-10-17)
                 https://github.com/<owner>/chit-app
   Last 30 days  4 meaningful events
-  Contract      0xd523a627030509021cc39b6d7c8543417d3e50d8 · token verified (VERIFIED)
+  Contract      0xd523a627030509021cc39b6d7c8543417d3e50d8 · Project names this contract
   Unknowns      NOT_MEASURED — HEY read its website and found no link to docs.
                 NOT_MEASURED — Its website links no API description.
   Page          https://heyresearch.xyz/project/chit

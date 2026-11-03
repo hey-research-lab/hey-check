@@ -4,7 +4,14 @@ All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project uses
 [Semantic Versioning](https://semver.org/).
 
-## Unreleased
+## 0.1.1 — unreleased (not yet on npm)
+
+### Changed
+
+- The token check reads in HEY's own words (ruling R2, 2026-10-28): "Project names this contract",
+  "Not named by the project" or "Project names another contract", on the terminal answer and the card,
+  without the stored value in brackets. `--json` is unchanged.
+- Development: vitest 4.1.12.
 
 ### Fixed
 
