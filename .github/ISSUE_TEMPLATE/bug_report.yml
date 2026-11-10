@@ -7,7 +7,7 @@ body:
       value: |
         Thanks for reporting. Please check [docs/TROUBLESHOOTING.md](https://github.com/hey-research-lab/hey-check/blob/main/docs/TROUBLESHOOTING.md) first: shell quoting, git for `npx github:` and the card renderer cover most problems.
         A security problem is reported privately instead; see [SECURITY.md](https://github.com/hey-research-lab/hey-check/blob/main/SECURITY.md).
-        A disagreement with HEY's record of a project (its status, a ship, a contract) is about Hey Research Lab's data, not this tool: use the project's page at heyresearch.xyz.
+        A disagreement with HEY's record of a project (its status, a ship, a contract) is about HEY Research Lab's data, not this tool: use the project's page at heyresearch.xyz.
   - type: input
     id: command
     attributes:

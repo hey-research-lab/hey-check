@@ -95,7 +95,7 @@ describe('parseInput', () => {
   it('reads a project name or slug', () => {
     expect(parseInput('loom')).toEqual({ kind: 'name', raw: 'loom', q: 'loom' });
     expect(parseInput('loomdesk-hq-mcp')).toMatchObject({ kind: 'name', q: 'loomdesk-hq-mcp' });
-    expect(parseInput('Hey Research Lab')).toMatchObject({ kind: 'name', q: 'Hey Research Lab' });
+    expect(parseInput('HEY Research Lab')).toMatchObject({ kind: 'name', q: 'HEY Research Lab' });
     expect(parseInput('Ёлка')).toMatchObject({ kind: 'name' });
   });
 

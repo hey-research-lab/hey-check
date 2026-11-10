@@ -356,7 +356,7 @@ their source. Public API docs: <https://heyresearch.xyz/docs/public-api>. The sa
 served to agents by the hosted MCP server, <https://heyresearch.xyz/mcp>. For every other read
 (ships, changes, evidence, unknowns), use [`@hey-research-lab/cli`](https://github.com/hey-research-lab/hey-cli).
 
-Other open tools from Hey Research Lab:
+Other open tools from HEY Research Lab:
 
 - [`hey-cli`](https://github.com/hey-research-lab/hey-cli): every public read (projects, ships,
   changes, evidence, unknowns) from the terminal, with JSON output.

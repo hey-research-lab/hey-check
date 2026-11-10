@@ -21,4 +21,4 @@ body:
     id: source
     attributes:
       label: Where the data would come from
-      description: hey-check relays Hey Research Lab's public API and computes nothing of its own. Name the public endpoint or field, if you know it (https://heyresearch.xyz/docs/public-api).
+      description: hey-check relays HEY Research Lab's public API and computes nothing of its own. Name the public endpoint or field, if you know it (https://heyresearch.xyz/docs/public-api).
