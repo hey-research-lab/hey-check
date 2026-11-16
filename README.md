@@ -391,6 +391,8 @@ stripped before it reaches your terminal, the JSON or the card, and it is XML-es
 card's SVG. It writes one file, the card, at the path shown, never through a symbolic link, and
 runs no child processes.
 
+HEY Research Lab also reviews other projects' code and reports what it finds privately first: [security credits](https://github.com/hey-research-lab#security-credits).
+
 ## Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md). `pnpm install && pnpm scan && pnpm lint && pnpm typecheck
