@@ -25,7 +25,7 @@ a reason to trade.
 
 ## Why Robinhood Chain only
 
-HEY researches one chain: Robinhood Chain, chain id `4663` (`eip155:4663`). It is implicit; there
+HEY's API and this check answer for one chain: Robinhood Chain, chain id `4663` (`eip155:4663`). It is implicit; there
 is no network, chain or RPC option. A CAIP-10 address on another chain (`eip155:1:0x…`), or a
 `--chain`/`--network` flag, is refused with `unsupported_chain` (exit 2).
 
